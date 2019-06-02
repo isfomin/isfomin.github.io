@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Суши</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/jcarousel/dist/jquery.jcarousel.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/custom.js"></script>
+</head>
+<body class="page">
+  <div class="page-left-plant bg-left-plant"></div>
+  <div class="page-right-plant bg-right-plant"></div>
+  <div class="page-sticks bg-sticks"></div>
+  
+  <header class="header">
+    <div class="header-top-line bg-stable">
+      <div class="cont-site">
+        <div class="town text-r">
+          Ваш город: <span class="town-name"><a href="#">Тюмень</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="header-logo-line">
+      <div class="cont-site">
+        <div class="ln-fill">
+          <div class="ln-i bl bl-main bl-r">
+            <div class="header-section header-section-stocked-l">
+              <div class="logo">
+                <a href="index.html" class="link-block"></a>
+                <div class="logo-view">
+                  <img src="images/logo.png" alt="" class="logo-img">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ln-i ln-i-m bl bl-main bl-r">
+            <div class="header-section">
+              <div class="info info-time icon icon-bg icon-large icon-clock">
+                <div class="info-content">
+                  Доставка работает<br>с 10:00 до 03:00
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ln-i ln-i-m bl bl-main bl-r">
+            <div class="header-section">
+              <div class="info info-payment icon icon-bg icon-large icon-card">
+                <div class="info-content">
+                  Оплата наличными<br>и картами
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ln-i ln-i-m">
+            <div class="header-section header-section-stocked-r">
+              <div class="shift-r">
+                <div class="info info-phone info-icon icon icon-bg icon-large icon-tube">
+                  <div class="info-content">
+                    <div class="phone">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="phone-code">+7(3452)</div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="phone-number color-assertive">60-06-06</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-r">
+                      <a href="#" class="info-link">Заказать звонок</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-menu-line">
+      <div class="cont-site">
+        <div class="menu menu-main">
+          <div class="menu-list">
+            <div class="menu-item menu-item-first">
+              <a href="#" class="menu-link menu-link-first menu-icon icon icon-bg icon-medium icon-book">Меню</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Акции</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Отзывы</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">О нас</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Новости</a>
+            </div>
+            <div class="menu-item">
+              <a href="contacts.html" class="menu-link">Контакты</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Доставка</a>
+            </div>
+            <div class="menu-item menu-item-actions menu-icon icon icon-bg icon-medium icon-person">
+              <div>
+                <a href="#auth" class="link link-swan">Войти</a>
+              </div>
+              <a href="#reg" class="link link-swan">Регистрация</a>
+            </div>
+            <div class="menu-item menu-item-actions menu-item-last menu-icon icon icon-bg icon-medium icon-basket">
+              <a href="cart.html" class="link link-swan">Корзина</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-facade">
+      <div class="cont-site">
+        <div class="js-jcarousel js-jcarousel-front carousel carousel-front">
+          <div class="carousel-scene">
+            <ul class="carousel-list">
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <img src="images/temp/pic-slider-front.png" alt="">
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <img src="images/temp/pic-slider-front.png" alt="">
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <img src="images/temp/pic-slider-front.png" alt="">
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="carousel-control-prev">
+            <div class="js-carousel-control-prev control control-snipe control-prev inactive"></div>
+          </div>
+          <div class="carousel-control-next">
+            <div class="js-carousel-control-next control control-snipe control-next inactive"></div>
+          </div>
+          <div class="carousel-control-nav">
+            <div class="shift-c">
+              <div class="js-carousel-nav control control-nav">
+                <div class="control-i active"></div>
+                <div class="control-i"></div>
+                <div class="control-i"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <div class="cont-hawk">
+      <div class="h-title h-title-main">
+        <div class="title title-swift">Хиты продаж</div>
+      </div>
+      <div class="h-carousel h-carousel-hit">
+        <div class="js-jcarousel js-jcarousel-basic carousel carousel-hits">
+          <div class="carousel-scene">
+            <ul class="carousel-list">
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="l-card card card-hit shadow shadow-card">
+                    <div class="l-card-view">
+                      <img src="images/temp/pic-hit.jpg" alt="" class="l-card-img">
+                      <div class="l-card-label">
+                        <div class="label label-hit shadow shadow-text">Хит</div>
+                      </div>
+                    </div>
+                    <div class="l-card-title title title-snipe">Ролл филадельфия</div>
+                    <div class="l-card-details">
+                      <div class="grid-xthin">
+                        <div class="ln-equal">
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-l">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-weight"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">300 г</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-r">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-fire"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">210 кк</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="js-item ln-fill">
+                      <div class="ln-i ln-i-m">
+                        <div class="l-card-price">
+                          <div class="price">
+                            <div class="ln">
+                              <div class="ln-i">
+                                <div class="js-price price-value" data-price="450">450</div>
+                              </div>
+                              <div class="ln-i ln-i-b">
+                                <div class="price-currency">руб</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ln-i">
+                        <div class="l-card-counter">
+                          <div class="js-counter counter">
+                            <div class="inline">
+                              <div class="h-input h-input-xxx">
+                                <input type="text" class="js-counter-input counter-input input input-field" value="1">
+                              </div>
+                            </div>
+                            <div class="inline">
+                              <div class="counter-controls">
+                                <div class="js-counter-up counter-control plus"></div>
+                                <div class="js-counter-down counter-control minus"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-card-actions">
+                      <a href="#" class="button button-swift button-block">В корзину</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="l-card card card-hit shadow shadow-card">
+                    <div class="l-card-view">
+                      <img src="images/temp/pic-hit.jpg" alt="" class="l-card-img">
+                      <div class="l-card-label">
+                        <div class="label label-hit shadow shadow-text">Хит</div>
+                      </div>
+                    </div>
+                    <div class="l-card-title title title-snipe">Ролл филадельфия</div>
+                    <div class="l-card-details">
+                      <div class="grid-xthin">
+                        <div class="ln-equal">
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-l">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-weight"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">300 г</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-r">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-fire"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">210 кк</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="js-item ln-fill">
+                      <div class="ln-i ln-i-m">
+                        <div class="l-card-price">
+                          <div class="price">
+                            <div class="ln">
+                              <div class="ln-i">
+                                <div class="js-price price-value" data-price="450">450</div>
+                              </div>
+                              <div class="ln-i ln-i-b">
+                                <div class="price-currency">руб</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ln-i">
+                        <div class="l-card-counter">
+                          <div class="js-counter counter">
+                            <div class="inline">
+                              <div class="h-input h-input-xxx">
+                                <input type="text" class="js-counter-input counter-input input input-field" value="1">
+                              </div>
+                            </div>
+                            <div class="inline">
+                              <div class="counter-controls">
+                                <div class="js-counter-up counter-control plus"></div>
+                                <div class="js-counter-down counter-control minus"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-card-actions">
+                      <a href="#" class="button button-swift button-block">В корзину</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="l-card card card-hit shadow shadow-card">
+                    <div class="l-card-view">
+                      <img src="images/temp/pic-hit.jpg" alt="" class="l-card-img">
+                      <div class="l-card-label">
+                        <div class="label label-hit shadow shadow-text">Хит</div>
+                      </div>
+                    </div>
+                    <div class="l-card-title title title-snipe">Ролл филадельфия</div>
+                    <div class="l-card-details">
+                      <div class="grid-xthin">
+                        <div class="ln-equal">
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-l">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-weight"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">300 г</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-r">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-fire"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">210 кк</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="js-item ln-fill">
+                      <div class="ln-i ln-i-m">
+                        <div class="l-card-price">
+                          <div class="price">
+                            <div class="ln">
+                              <div class="ln-i">
+                                <div class="js-price price-value" data-price="450">450</div>
+                              </div>
+                              <div class="ln-i ln-i-b">
+                                <div class="price-currency">руб</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ln-i">
+                        <div class="l-card-counter">
+                          <div class="js-counter counter">
+                            <div class="inline">
+                              <div class="h-input h-input-xxx">
+                                <input type="text" class="js-counter-input counter-input input input-field" value="1">
+                              </div>
+                            </div>
+                            <div class="inline">
+                              <div class="counter-controls">
+                                <div class="js-counter-up counter-control plus"></div>
+                                <div class="js-counter-down counter-control minus"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-card-actions">
+                      <a href="#" class="button button-swift button-block">В корзину</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="h-card h-card-stock">
+                    <div class="h-card-top">
+                      <div class="title title-hawk title-light shadow shadow-text">
+                        <span class="title-marks">Акция</span>
+                      </div>
+                    </div>
+                    <div class="h-card-bottom">
+                      <div class="text-c color-light">
+                        До конца акции осталось:
+                        <div class="time">
+                          <span class="time-hour">09 ч.</span>
+                          <span class="time-minutes">18 м.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-card card card-stock shadow shadow-card">
+                      <div class="l-card-view">
+                        <img src="images/temp/pic-hit.jpg" alt="" class="l-card-img">
+                        <div class="l-card-label"></div>
+                      </div>
+                      <div class="l-card-title title title-snipe">Ролл филадельфия</div>
+                      <div class="l-card-details card-details">
+                        <div class="grid-xthin">
+                          <div class="ln-equal">
+                            <div class="ln-i">
+                              <div class="grid-xthin-i">
+                                <div class="feature feature-rounded-l">
+                                  <div class="ln-fill">
+                                    <div class="ln-i">
+                                      <div class="feature-icon">
+                                        <div class="icon icon-small icon-weight"></div>
+                                      </div>
+                                    </div>
+                                    <div class="ln-i ln-i-fill">
+                                      <div class="feature-value">300 г</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="ln-i">
+                              <div class="grid-xthin-i">
+                                <div class="feature feature-rounded-r">
+                                  <div class="ln-fill">
+                                    <div class="ln-i">
+                                      <div class="feature-icon">
+                                        <div class="icon icon-small icon-fire"></div>
+                                      </div>
+                                    </div>
+                                    <div class="ln-i ln-i-fill">
+                                      <div class="feature-value">210 кк</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="js-item ln-fill">
+                        <div class="ln-i ln-i-m">
+                          <div class="card-price-old shift-r">
+                            <div class="price price-old">
+                              <div class="ln">
+                                <div class="ln-i">
+                                  <div class="js-price price-value" data-price="450">450</div>
+                                </div>
+                                <div class="ln-i ln-i-b">
+                                  <div class="price-currency">руб</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-card-price">
+                            <div class="price price-new">
+                              <div class="ln">
+                                <div class="ln-i">
+                                  <div class="js-price price-value" data-price="300">300</div>
+                                </div>
+                                <div class="ln-i ln-i-b">
+                                  <div class="price-currency">руб</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ln-i ln-i-m">
+                          <div class="l-card-counter">
+                            <div class="js-counter counter">
+                              <div class="inline">
+                                <div class="h-input h-input-xxx">
+                                  <input type="text" class="js-counter-input counter-input input input-field" value="1">
+                                </div>
+                              </div>
+                              <div class="inline">
+                                <div class="counter-controls">
+                                  <div class="js-counter-up counter-control plus"></div>
+                                  <div class="js-counter-down counter-control minus"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="l-card-actions card-actions">
+                        <a href="#" class="button button-snipe button-block">В корзину</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="l-card card card-hit shadow shadow-card">
+                    <div class="l-card-view">
+                      <img src="images/temp/pic-hit.jpg" alt="" class="l-card-img">
+                      <div class="l-card-label">
+                        <div class="label label-hit shadow shadow-text">Хит</div>
+                      </div>
+                    </div>
+                    <div class="l-card-title title title-snipe">Ролл филадельфия</div>
+                    <div class="l-card-details">
+                      <div class="grid-xthin">
+                        <div class="ln-equal">
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-l">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-weight"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">300 г</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-r">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-fire"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">210 кк</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="js-item ln-fill">
+                      <div class="ln-i ln-i-m">
+                        <div class="l-card-price">
+                          <div class="price">
+                            <div class="ln">
+                              <div class="ln-i">
+                                <div class="js-price price-value" data-price="450">450</div>
+                              </div>
+                              <div class="ln-i ln-i-b">
+                                <div class="price-currency">руб</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ln-i">
+                        <div class="l-card-counter">
+                          <div class="js-counter counter">
+                            <div class="inline">
+                              <div class="h-input h-input-xxx">
+                                <input type="text" class="js-counter-input counter-input input input-field" value="1">
+                              </div>
+                            </div>
+                            <div class="inline">
+                              <div class="counter-controls">
+                                <div class="js-counter-up counter-control plus"></div>
+                                <div class="js-counter-down counter-control minus"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-card-actions">
+                      <a href="#" class="button button-swift button-block">В корзину</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="l-card card card-hit shadow shadow-card">
+                    <div class="l-card-view">
+                      <img src="images/temp/pic-hit.jpg" alt="" class="l-card-img">
+                      <div class="l-card-label">
+                        <div class="label label-hit shadow shadow-text">Хит</div>
+                      </div>
+                    </div>
+                    <div class="l-card-title title title-snipe">Ролл филадельфия</div>
+                    <div class="l-card-details">
+                      <div class="grid-xthin">
+                        <div class="ln-equal">
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-l">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-weight"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">300 г</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-r">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-fire"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">210 кк</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="js-item ln-fill">
+                      <div class="ln-i ln-i-m">
+                        <div class="l-card-price">
+                          <div class="price">
+                            <div class="ln">
+                              <div class="ln-i">
+                                <div class="js-price price-value" data-price="450">450</div>
+                              </div>
+                              <div class="ln-i ln-i-b">
+                                <div class="price-currency">руб</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ln-i">
+                        <div class="l-card-counter">
+                          <div class="js-counter counter">
+                            <div class="inline">
+                              <div class="h-input h-input-xxx">
+                                <input type="text" class="js-counter-input counter-input input input-field" value="1">
+                              </div>
+                            </div>
+                            <div class="inline">
+                              <div class="counter-controls">
+                                <div class="js-counter-up counter-control plus"></div>
+                                <div class="js-counter-down counter-control minus"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-card-actions">
+                      <a href="#" class="button button-swift button-block">В корзину</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="l-card card card-hit shadow shadow-card">
+                    <div class="l-card-view">
+                      <img src="images/temp/pic-hit.jpg" alt="" class="l-card-img">
+                      <div class="l-card-label">
+                        <div class="label label-hit shadow shadow-text">Хит</div>
+                      </div>
+                    </div>
+                    <div class="l-card-title title title-snipe">Ролл филадельфия</div>
+                    <div class="l-card-details">
+                      <div class="grid-xthin">
+                        <div class="ln-equal">
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-l">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-weight"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">300 г</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-r">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-fire"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">210 кк</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="js-item ln-fill">
+                      <div class="ln-i ln-i-m">
+                        <div class="l-card-price">
+                          <div class="price">
+                            <div class="ln">
+                              <div class="ln-i">
+                                <div class="js-price price-value" data-price="450">450</div>
+                              </div>
+                              <div class="ln-i ln-i-b">
+                                <div class="price-currency">руб</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ln-i">
+                        <div class="l-card-counter">
+                          <div class="js-counter counter">
+                            <div class="inline">
+                              <div class="h-input h-input-xxx">
+                                <input type="text" class="js-counter-input counter-input input input-field" value="1">
+                              </div>
+                            </div>
+                            <div class="inline">
+                              <div class="counter-controls">
+                                <div class="js-counter-up counter-control plus"></div>
+                                <div class="js-counter-down counter-control minus"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-card-actions">
+                      <a href="#" class="button button-swift button-block">В корзину</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="l-card card card-hit shadow shadow-card">
+                    <div class="l-card-view">
+                      <img src="images/temp/pic-hit.jpg" alt="" class="l-card-img">
+                      <div class="l-card-label">
+                        <div class="label label-hit shadow shadow-text">Хит</div>
+                      </div>
+                    </div>
+                    <div class="l-card-title title title-snipe">Ролл филадельфия</div>
+                    <div class="l-card-details">
+                      <div class="grid-xthin">
+                        <div class="ln-equal">
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-l">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-weight"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">300 г</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-r">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-fire"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">210 кк</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="js-item ln-fill">
+                      <div class="ln-i ln-i-m">
+                        <div class="l-card-price">
+                          <div class="price">
+                            <div class="ln">
+                              <div class="ln-i">
+                                <div class="js-price price-value" data-price="450">450</div>
+                              </div>
+                              <div class="ln-i ln-i-b">
+                                <div class="price-currency">руб</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ln-i">
+                        <div class="l-card-counter">
+                          <div class="js-counter counter">
+                            <div class="inline">
+                              <div class="h-input h-input-xxx">
+                                <input type="text" class="js-counter-input counter-input input input-field" value="1">
+                              </div>
+                            </div>
+                            <div class="inline">
+                              <div class="counter-controls">
+                                <div class="js-counter-up counter-control plus"></div>
+                                <div class="js-counter-down counter-control minus"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-card-actions">
+                      <a href="#" class="button button-swift button-block">В корзину</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="l-card card card-hit shadow shadow-card">
+                    <div class="l-card-view">
+                      <img src="images/temp/pic-hit.jpg" alt="" class="l-card-img">
+                      <div class="l-card-label">
+                        <div class="label label-hit shadow shadow-text">Хит</div>
+                      </div>
+                    </div>
+                    <div class="l-card-title title title-snipe">Ролл филадельфия</div>
+                    <div class="l-card-details">
+                      <div class="grid-xthin">
+                        <div class="ln-equal">
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-l">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-weight"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">300 г</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ln-i">
+                            <div class="grid-xthin-i">
+                              <div class="feature feature-rounded-r">
+                                <div class="ln-fill">
+                                  <div class="ln-i">
+                                    <div class="feature-icon">
+                                      <div class="icon icon-small icon-fire"></div>
+                                    </div>
+                                  </div>
+                                  <div class="ln-i ln-i-fill">
+                                    <div class="feature-value">210 кк</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="js-item ln-fill">
+                      <div class="ln-i ln-i-m">
+                        <div class="l-card-price">
+                          <div class="price">
+                            <div class="ln">
+                              <div class="ln-i">
+                                <div class="js-price price-value" data-price="450">450</div>
+                              </div>
+                              <div class="ln-i ln-i-b">
+                                <div class="price-currency">руб</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ln-i">
+                        <div class="l-card-counter">
+                          <div class="js-counter counter">
+                            <div class="inline">
+                              <div class="h-input h-input-xxx">
+                                <input type="text" class="js-counter-input counter-input input input-field" value="1">
+                              </div>
+                            </div>
+                            <div class="inline">
+                              <div class="counter-controls">
+                                <div class="js-counter-up counter-control plus"></div>
+                                <div class="js-counter-down counter-control minus"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-card-actions">
+                      <a href="#" class="button button-swift button-block">В корзину</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="carousel-control-prev">
+            <div class="js-carousel-control-prev control control-hovered control-swift control-prev inactive"></div>
+          </div>
+          <div class="carousel-control-next">
+            <div class="js-carousel-control-next control control-hovered control-swift control-next inactive"></div>
+          </div>
+        </div>
+      </div>
+      <section class="section section-snippet">
+        <div class="snippet snippet-snipe">
+          <div class="snippet-head">
+            <div class="h-title h-title-main">
+              <h2 class="title title-swift">О компании</h2>
+            </div>
+          </div>
+          <div class="snippet-content">
+            <p>Компания Суши-Мастер - это настоящая команда профессионалов. В нашей работе собран передовой опыт, глубокое знание японской кухни, всех нюансов приготовления блюд - всё самое лучшее. Компания Суши-Мастер - это настоящая команда профессионалов. В нашей работе собран передовой опыт, глубокое знание японской кухни, всех нюансов приготовления блюд - всё самое лучшее. Компания Суши-Мастер - это настоящая команда профессионалов. В нашей работе собран передовой опыт, глубокое знание японской кухни, всех нюансов приготовления блюд - всё самое лучшее. Компания Суши-Мастер - это настоящая команда профессионалов. В нашей работе собран передовой опыт, глубокое знание японской кухни, всех нюансов приготовления блюд - всё самое лучшее. Компания Суши-Мастер - это настоящая команда профессионалов.</p>
+            <a href="#">Подробнее</a> 
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="section section-news bg-page-section">
+      <div class="cont-hawk">
+        <div class="h-title h-title-main h-title-inner">
+          <div class="ln-fill">
+            <div class="ln-i"><h2 class="title title-swift">Новости</h2></div>
+            <div class="ln-i ln-i-m text-r">
+              <span class="h-link h-link-hawk">
+                <a href="#">Все новости</a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="js-jcarousel js-jcarousel-basic carousel carousel-basic">
+          <div class="carousel-scene">
+            <ul class="carousel-list">
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="card card-news">
+                    <div class="card-view">
+                      <img src="images/temp/pic-news.png" alt="" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title">
+                        <a href="#" class="link link-standart link-hovered">Ролл за 99 рублей</a>
+                      </div>
+                      <div class="card-desc">На этой неделе: ролл<br>Гейша всего за 99 руб!!!</div>
+                      <div class="card-date color-stable-light">30.04.2015</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="card card-news">
+                    <div class="card-view">
+                      <img src="images/temp/pic-news.png" alt="" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title">
+                        <a href="#" class="link link-standart link-hovered">Ролл за 99 рублей</a>
+                      </div>
+                      <div class="card-desc">На этой неделе: ролл<br>Гейша всего за 99 руб!!!</div>
+                      <div class="card-date color-stable-light">30.04.2015</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="card card-news">
+                    <div class="card-view">
+                      <img src="images/temp/pic-news.png" alt="" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title">
+                        <a href="#" class="link link-standart link-hovered">Ролл за 99 рублей</a>
+                      </div>
+                      <div class="card-desc">На этой неделе: ролл<br>Гейша всего за 99 руб!!!</div>
+                      <div class="card-date color-stable-light">30.04.2015</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="card card-news">
+                    <div class="card-view">
+                      <img src="images/temp/pic-news.png" alt="" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title">
+                        <a href="#" class="link link-standart link-hovered">Ролл за 99 рублей</a>
+                      </div>
+                      <div class="card-desc">На этой неделе: ролл<br>Гейша всего за 99 руб!!!</div>
+                      <div class="card-date color-stable-light">30.04.2015</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="card card-news">
+                    <div class="card-view">
+                      <img src="images/temp/pic-news.png" alt="" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title">
+                        <a href="#" class="link link-standart link-hovered">Ролл за 99 рублей</a>
+                      </div>
+                      <div class="card-desc">На этой неделе: ролл<br>Гейша всего за 99 руб!!!</div>
+                      <div class="card-date color-stable-light">30.04.2015</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="carousel-item">
+                <div class="carousel-slide">
+                  <div class="card card-news">
+                    <div class="card-view">
+                      <img src="images/temp/pic-news.png" alt="" class="card-img">
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title">
+                        <a href="#" class="link link-standart link-hovered">Ролл за 99 рублей</a>
+                      </div>
+                      <div class="card-desc">На этой неделе: ролл<br>Гейша всего за 99 руб!!!</div>
+                      <div class="card-date color-stable-light">30.04.2015</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="carousel-control-prev">
+            <div class="js-carousel-control-prev control control-swift control-prev inactive"></div>
+          </div>
+          <div class="carousel-control-next">
+            <div class="js-carousel-control-next control control-swift control-next inactive"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section bg-light">
+      <div class="cont-hawk">
+        <div class="grid">
+          <div class="ln-equal">
+            <div class="ln-i">
+              <div class="grid-i">
+                <div class="card card-simple shadow shadow-box">
+                  <div class="card-view">
+                    <img src="images/map.jpg" alt="" class="card-img">
+                  </div>
+                  <div class="card-actions">
+                    <a href="#" class="button button-master">Карта магазинов</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ln-i">
+              <div class="grid-i">
+                <div class="card card-simple shadow shadow-box">
+                  <div class="card-view">
+                    <img src="images/sushi.jpg" alt="" class="card-img">
+                  </div>
+                  <div class="card-actions">
+                    <div class="h-button h-button-crow">
+                      <a href="#" class="button button-sushi">Условия доставки</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="cont-hawk">
+      <div class="ln-fill">
+        <div class="ln-i bl bl-stork bl-r">
+          <div class="footer-section footer-section-stocked-l">
+            <div class="logo">
+              <a href="/" class="link-block"></a>
+              <div class="logo-view">
+                <img src="images/logo.png" alt="" class="logo-img">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ln-i bl bl-stork bl-r">
+          <div class="footer-section">
+            <div class="footer-menu">
+              <div class="menu menu-side">
+                <div class="grid-menu-side">
+                  <div class="ln">
+                    <div class="ln-i">
+                      <div class="grid-menu-side-i">
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Меню</a>
+                        </div>
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Акции</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-menu-side-i">
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Отзывы</a>
+                        </div>
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">О нас</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-menu-side-i">
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Новости</a>
+                        </div>
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Контакты</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ln-i bl bl-stork bl-r">
+          <div class="footer-section">
+            <div class="info info-join">
+              <div class="info-label">Присоединяйтесь к нам:</div>
+              <div class="info-socials">
+                <div class="grid-thin">
+                  <div class="ln">
+                    <div class="ln-i">
+                      <div class="grid-thin-i">
+                        <a href="#" class="icon icon-socials icon-vk"></a>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-thin-i">
+                        <a href="#" class="icon icon-socials icon-fb"></a>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-thin-i">
+                        <a href="#" class="icon icon-socials icon-instagram"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ln-i">
+          <div class="footer-section footer-section-stocked-r">
+            <div class="info info-dev">
+              <div class="info-label">Создание сайта:</div>
+              <a href="http://vprioritete.ru/" target="_blank" class="link link-swift">ИК &laquo;Приоритет&raquo;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

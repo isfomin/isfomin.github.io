@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Суши - контакты</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/jcarousel/dist/jquery.jcarousel.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/custom.js"></script>
+</head>
+<body class="page">
+  <header class="header">
+    <div class="header-top-line bg-stable">
+      <div class="cont-site">
+        <div class="town text-r">
+          Ваш город: <span class="town-name"><a href="#">Тюмень</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="header-logo-line">
+      <div class="cont-site">
+        <div class="ln-fill">
+          <div class="ln-i bl bl-main bl-r">
+            <div class="header-section header-section-stocked-l">
+              <div class="logo">
+                <a href="index.html" class="link-block"></a>
+                <div class="logo-view">
+                  <img src="images/logo.png" alt="" class="logo-img">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ln-i ln-i-m bl bl-main bl-r">
+            <div class="header-section">
+              <div class="info info-time icon icon-bg icon-large icon-clock">
+                <div class="info-content">
+                  Доставка работает<br>с 10:00 до 03:00
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ln-i ln-i-m bl bl-main bl-r">
+            <div class="header-section">
+              <div class="info info-payment icon icon-bg icon-large icon-card">
+                <div class="info-content">
+                  Оплата наличными<br>и картами
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ln-i ln-i-m">
+            <div class="header-section header-section-stocked-r">
+              <div class="shift-r">
+                <div class="info info-phone info-icon icon icon-bg icon-large icon-tube">
+                  <div class="info-content">
+                    <div class="phone">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="phone-code">+7(3452)</div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="phone-number color-assertive">60-06-06</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-r">
+                      <a href="#" class="info-link">Заказать звонок</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-menu-line">
+      <div class="cont-site">
+        <div class="menu menu-main">
+          <div class="menu-list">
+            <div class="menu-item menu-item-first">
+              <a href="#" class="menu-link menu-link-first menu-icon icon icon-bg icon-medium icon-book">Меню</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Акции</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Отзывы</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">О нас</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Новости</a>
+            </div>
+            <div class="menu-item active">
+              <a href="contacts.html" class="menu-link">Контакты</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Доставка</a>
+            </div>
+            <div class="menu-item menu-item-actions menu-icon icon icon-bg icon-medium icon-person">
+              <div>
+                <a href="#auth" class="link link-swan">Войти</a>
+              </div>
+              <a href="#reg" class="link link-swan">Регистрация</a>
+            </div>
+            <div class="menu-item menu-item-actions menu-item-last menu-icon icon icon-bg icon-medium icon-basket">
+              <a href="cart.html" class="link link-swan">Корзина</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <div class="cont-site">
+      <div class="heading">
+        <div class="heading-breadcrumbs">
+          <div class="breadcrumbs">
+            <ul class="breadcrumbs-list">
+              <li class="breadcrumbs-item">
+                <a class="link link-hawk" href="#">Главная</a>
+                <span class="breadcrumbs-delim">●</span>
+              </li>
+              <li class="breadcrumbs-item">Контакты</li>
+            </ul>
+          </div>
+        </div>
+        <div class="heading-title">
+          <h1 class="title title-swift">Контакты</h1>
+        </div>
+      </div>
+      <div class="section section-hawk">
+        <div class="tabs">
+        <ul class="tabs-control">
+          <li class="tabs-control-item">
+            <a href="#address" class="button button-hawk button-reverse tabs-button" data-toggle="tab">Адреса магазинов</a>
+          </li>
+          <li class="tabs-control-item active">
+            <a href="#contacts" class="button button-hawk button-reverse tabs-button" data-toggle="tab">Контакты</a>
+          </li>
+        </ul>
+        <div class="tabs-content decorator decorator-topline shadow shadow-card">
+          <div class="tabs-pane" id="address">
+            <div class="tabs-section">
+              <div class="h-navigation h-navigation-crow">
+                <ul class="navigation navigation-simple group">
+                  <li class="navigation-item group-i active">
+                    <a href="#" class="navigation-link link link-swift">Списком</a>
+                  </li>
+                  <li class="navigation-item group-i">
+                    <a href="#" class="navigation-link link link-swift">На карте</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="area area-col3 grid-hawk">
+                <div class="area-i">
+                  <div class="grid-hawk-i">
+                    <div class="info info-address">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="icon icon-medium icon-label"></div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="info-address"><a href="#" class="link link-standart">Беляева 29/1</a></div>
+                          <div class="info-phone">
+                            <div class="phone phone-swift">
+                              <span class="phone-code">+7 (3452)</span>
+                              <span class="phone-number">60-06-06</span>
+                            </div>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Единая справочная:</span>
+                            <span class="info-value">пн-вс 10:00-03:00</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Наличный расчет:</span>
+                            <span class="info-value">Visa, MasterCard</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Ежедневно:</span>
+                            <span class="info-value">10:00-23:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid-hawk-i">
+                    <div class="info info-address">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="icon icon-medium icon-label"></div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="info-address"><a href="#" class="link link-standart">Газовиков, 63</a></div>
+                          <div class="info-phone">
+                            <div class="phone phone-swift">
+                              <span class="phone-code">+7 (3452)</span>
+                              <span class="phone-number">60-06-06</span>
+                            </div>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Единая справочная:</span>
+                            <span class="info-value">пн-вс 10:00-03:00</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Наличный расчет:</span>
+                            <span class="info-value">Visa, MasterCard</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Ежедневно:</span>
+                            <span class="info-value">10:00-23:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid-hawk-i">
+                    <div class="info info-address">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="icon icon-medium icon-label"></div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="info-address"><a href="#" class="link link-standart">Заподносибирская, 22</a></div>
+                          <div class="info-phone">
+                            <div class="phone phone-swift">
+                              <span class="phone-code">+7 (3452)</span>
+                              <span class="phone-number">60-06-06</span>
+                            </div>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Единая справочная:</span>
+                            <span class="info-value">пн-вс 10:00-03:00</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Наличный расчет:</span>
+                            <span class="info-value">Visa, MasterCard</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Ежедневно:</span>
+                            <span class="info-value">10:00-23:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid-hawk-i">
+                    <div class="info info-address">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="icon icon-medium icon-label"></div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="info-address"><a href="#" class="link link-standart">Максима Горького, 55</a></div>
+                          <div class="info-phone">
+                            <div class="phone phone-swift">
+                              <span class="phone-code">+7 (3452)</span>
+                              <span class="phone-number">60-06-06</span>
+                            </div>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Единая справочная:</span>
+                            <span class="info-value">пн-вс 10:00-03:00</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Наличный расчет:</span>
+                            <span class="info-value">Visa, MasterCard</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Ежедневно:</span>
+                            <span class="info-value">10:00-23:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="area-i">
+                  <div class="grid-hawk-i">
+                    <div class="info info-address">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="icon icon-medium icon-label"></div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="info-address"><a href="#" class="link link-standart">Мельникайте, 129Б</a></div>
+                          <div class="info-phone">
+                            <div class="phone phone-swift">
+                              <span class="phone-code">+7 (3452)</span>
+                              <span class="phone-number">60-06-06</span>
+                            </div>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Единая справочная:</span>
+                            <span class="info-value">пн-вс 10:00-03:00</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Наличный расчет:</span>
+                            <span class="info-value">Visa, MasterCard</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Ежедневно:</span>
+                            <span class="info-value">10:00-23:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid-hawk-i">
+                    <div class="info info-address">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="icon icon-medium icon-label"></div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="info-address"><a href="#" class="link link-standart">Прокопия Артамонова, 13</a></div>
+                          <div class="info-phone">
+                            <div class="phone phone-swift">
+                              <span class="phone-code">+7 (3452)</span>
+                              <span class="phone-number">60-06-06</span>
+                            </div>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Единая справочная:</span>
+                            <span class="info-value">пн-вс 10:00-03:00</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Наличный расчет:</span>
+                            <span class="info-value">Visa, MasterCard</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Ежедневно:</span>
+                            <span class="info-value">10:00-23:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid-hawk-i">
+                    <div class="info info-address">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="icon icon-medium icon-label"></div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="info-address"><a href="#" class="link link-standart">Республики, 189</a></div>
+                          <div class="info-phone">
+                            <div class="phone phone-swift">
+                              <span class="phone-code">+7 (3452)</span>
+                              <span class="phone-number">60-06-06</span>
+                            </div>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Единая справочная:</span>
+                            <span class="info-value">пн-вс 10:00-03:00</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Наличный расчет:</span>
+                            <span class="info-value">Visa, MasterCard</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Ежедневно:</span>
+                            <span class="info-value">10:00-23:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="area-i">
+                  <div class="grid-hawk-i">
+                    <div class="info info-address">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="icon icon-medium icon-label"></div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="info-address"><a href="#" class="link link-standart">Червишевский тракт, 66</a></div>
+                          <div class="info-phone">
+                            <div class="phone phone-swift">
+                              <span class="phone-code">+7 (3452)</span>
+                              <span class="phone-number">60-06-06</span>
+                            </div>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Единая справочная:</span>
+                            <span class="info-value">пн-вс 10:00-03:00</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Наличный расчет:</span>
+                            <span class="info-value">Visa, MasterCard</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Ежедневно:</span>
+                            <span class="info-value">10:00-23:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid-hawk-i">
+                    <div class="info info-address">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="icon icon-medium icon-label"></div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="info-address"><a href="#" class="link link-standart">Широтная, 185</a></div>
+                          <div class="info-phone">
+                            <div class="phone phone-swift">
+                              <span class="phone-code">+7 (3452)</span>
+                              <span class="phone-number">60-06-06</span>
+                            </div>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Единая справочная:</span>
+                            <span class="info-value">пн-вс 10:00-03:00</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Наличный расчет:</span>
+                            <span class="info-value">Visa, MasterCard</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Ежедневно:</span>
+                            <span class="info-value">10:00-23:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid-hawk-i">
+                    <div class="info info-address">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="icon icon-medium icon-label"></div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="info-address"><a href="#" class="link link-standart">Ямская, 102</a></div>
+                          <div class="info-phone">
+                            <div class="phone phone-swift">
+                              <span class="phone-code">+7 (3452)</span>
+                              <span class="phone-number">60-06-06</span>
+                            </div>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Единая справочная:</span>
+                            <span class="info-value">пн-вс 10:00-03:00</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Наличный расчет:</span>
+                            <span class="info-value">Visa, MasterCard</span>
+                          </div>
+                          <div class="info-item">
+                            <span class="info-label">Ежедневно:</span>
+                            <span class="info-value">10:00-23:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs-pane in active" id="contacts">
+            <div class="tabs-section">
+              <div class="group-hawk">
+                <div class="ln-fill aligner aligner-contacts">
+                  <div class="ln-i aligner-col1 bl bl-crow bl-r">
+                    <div class="group-hawk-i">
+                      <div class="h-title h-title-swift">
+                        <h3 class="title title-snipe">Адрес офиса</h3>
+                      </div>
+                      <div class="contacts">
+                        <div class="list-crow">
+                          <div class="list-crow-i">
+                            <div class="contacts-address contacts-icon icon icon-label icon-bg">
+                              Малыгина, 84/1, 5 этаж
+                            </div>
+                          </div>
+                          <div class="list-crow-i">
+                            <div class="contacts-phone contacts-icon icon icon-phone icon-bg">
+                              <div class="phone phone-swift">
+                                <span class="phone-code">+7 (3452)</span>
+                                <span class="phone-number">60-06-06</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="list-crow-i">
+                            <div class="contacts-mode contacts-icon icon icon-clock2 icon-bg">
+                              Режим работы: <br>
+                              Пн-пт: 09:00 - 18:00
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ln-i aligner-col2">
+                    <div class="group-hawk-i">
+                      <div class="h-title h-title-swift">
+                        <h3 class="title title-snipe">Напишите нам</h3>
+                      </div>
+                      <form action="#" class="form form-contacts">
+                        <div class="form-item form-item-stocked">
+                          <div class="group">
+                            <div class="ln-equal">
+                              <div class="ln-i">
+                                <div class="group-i">
+                                  <div class="ln-equal aligner">
+                                    <div class="ln-i ln-i-m aligner-label">
+                                      <label for="iname" class="label label-form">Ваше имя:</label>
+                                    </div>
+                                    <div class="ln-i aligner-input">
+                                      <input type="text" id="iname" class="input input-field input-rounded input-bordered" placeholder="ФИО">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="ln-i">
+                                <div class="group-i">
+                                  <div class="ln-fill">
+                                    <div class="ln-i ln-i-m">
+                                      <label for="iphone" class="label label-form">Телефон:</label>
+                                    </div>
+                                    <div class="ln-i">
+                                      <input type="text" id="iphone" class="input input-field input-rounded input-bordered" placeholder="+7 (892) 843-23-42">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-item">
+                          <div class="ln-equal aligner">
+                            <div class="ln-i ln-i-m aligner-label">
+                              <label for="imsg" class="label label-form">Сообщение:</label>
+                            </div>
+                            <div class="ln-i aligner-input">
+                              <input type="text" id="imsg" class="input input-field input-rounded input-bordered" placeholder="Сообщение">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-item form-item-done">
+                          <div class="ln-fill aligner">
+                            <div class="ln-i ln-i-m aligner-offset-label">
+                              <div class="chbox">
+                                <input id="chagree" type="checkbox" class="input">
+                                <label for="chagree" class="label label-form">Согласен на обработку персональных данных</label>
+                              </div>
+                            </div>
+                            <div class="ln-i">
+                              <div class="shift-r">
+                                <button class="button button-swift button-3d button-rounded">Отправить</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="ymap-contacts" class="ymap"></div>
+          </div>
+        </div>
+        </div><!-- .tabs -->
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="cont-hawk">
+      <div class="ln-fill">
+        <div class="ln-i bl bl-stork bl-r">
+          <div class="footer-section footer-section-stocked-l">
+            <div class="logo">
+              <a href="/" class="link-block"></a>
+              <div class="logo-view">
+                <img src="images/logo.png" alt="" class="logo-img">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ln-i bl bl-stork bl-r">
+          <div class="footer-section">
+            <div class="footer-menu">
+              <div class="menu menu-side">
+                <div class="grid-menu-side">
+                  <div class="ln">
+                    <div class="ln-i">
+                      <div class="grid-menu-side-i">
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Меню</a>
+                        </div>
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Акции</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-menu-side-i">
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Отзывы</a>
+                        </div>
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">О нас</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-menu-side-i">
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Новости</a>
+                        </div>
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Контакты</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ln-i bl bl-stork bl-r">
+          <div class="footer-section">
+            <div class="info info-join">
+              <div class="info-label">Присоединяйтесь к нам:</div>
+              <div class="info-socials">
+                <div class="grid-thin">
+                  <div class="ln">
+                    <div class="ln-i">
+                      <div class="grid-thin-i">
+                        <a href="#" class="icon icon-socials icon-vk"></a>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-thin-i">
+                        <a href="#" class="icon icon-socials icon-fb"></a>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-thin-i">
+                        <a href="#" class="icon icon-socials icon-instagram"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ln-i">
+          <div class="footer-section footer-section-stocked-r">
+            <div class="info info-dev">
+              <div class="info-label">Создание сайта:</div>
+              <a href="http://vprioritete.ru/" target="_blank" class="link link-swift">ИК &laquo;Приоритет&raquo;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

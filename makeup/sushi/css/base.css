@@ -1,0 +1,164 @@
+/*--------------------------------------------*\
+    CSS base
+    Version: 0.0.0
+\*--------------------------------------------*/
+
+/*--------------------------------------------*\
+    $RESET
+\*--------------------------------------------*/
+
+@import url(reset.css);
+
+* { 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box; 
+}
+
+/*--------------------------------------------*\
+    $BASE
+\*--------------------------------------------*/
+
+/* =cont= */
+.cont,
+.cont-site,
+.cont-hawk {
+  margin-left: auto;
+  margin-right: auto;
+}
+.cont-site {
+  width: 1000px;
+  min-width: 1000px;
+}
+.cont-hawk {
+  width: 940px;
+  min-width: 940px;
+}
+
+/* =text= */
+.text-c { text-align: center; }
+.text-l { text-align: left; }
+.text-r { text-align: right; }
+.text-b { font-weight: bold; }
+.text-uc { text-transform: uppercase; }
+
+/* =link= */
+.link-block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.link-cham {
+  text-decoration: inherit;
+  font: inherit;
+  color: inherit;
+}
+
+/* =ln= */
+.ln,
+.ln-equal,
+.ln-fill { 
+  display: table; 
+}
+.ln-fill { 
+  width: 100%; 
+}
+.ln-equal { 
+  width: 100%;
+  table-layout: fixed;
+}
+.ln-i {
+  display: table-cell;
+  vertical-align: top;
+}
+.ln-i.ln-i-t { vertical-align: top; }
+.ln-i.ln-i-m { vertical-align: middle; }
+.ln-i.ln-i-b { vertical-align: bottom; }
+.ln-i.ln-i-fill { width: 100%; }
+
+/* =grid= */
+.grid {
+  margin-left: -20px;
+  margin-top: -20px;
+}
+.grid-i {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+/* =group= */
+.group {
+  margin-left: -20px;
+}
+.group-i {
+  margin-left: 20px;
+}
+
+/* =list= */
+.list {
+  margin-top: -20px;
+}
+.list-i {
+  padding-top: 20px;
+}
+
+/* =area= */
+.area {}
+.area:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.area-i {
+  float: left;
+}
+.area.area-col2 .area-i {
+  width: 50%;
+}
+.area.area-col3 .area-i {
+  width: 33.3333%;
+}
+.area.area-col4 .area-i {
+  width: 25%;
+}
+.area.area-col5 .area-i {
+  width: 20%;
+}
+
+/* =shift= */
+.shift,
+.shift-c,
+.shift-r,
+.shift-l { display: table; }
+
+.shift-c {
+  margin-left: auto;
+  margin-right: auto;
+}
+.shift-r {
+  margin-left: auto;
+}
+.shift-l {
+  margin-right: auto;
+}
+
+/* =inline= */
+.inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+.inline.inline-t {
+  vertical-align: top;
+}
+.inline.inline-m {
+  vertical-align: middle;
+}
+.inline.inline-b {
+  vertical-align: bottom;
+}

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Суши - корзина</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/jcarousel/dist/jquery.jcarousel.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/custom.js"></script>
+</head>
+<body class="page">
+  <header class="header">
+    <div class="header-top-line bg-stable">
+      <div class="cont-site">
+        <div class="town text-r">
+          Ваш город: <span class="town-name"><a href="#">Тюмень</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="header-logo-line">
+      <div class="cont-site">
+        <div class="ln-fill">
+          <div class="ln-i bl bl-main bl-r">
+            <div class="header-section header-section-stocked-l">
+              <div class="logo">
+                <a href="index.html" class="link-block"></a>
+                <div class="logo-view">
+                  <img src="images/logo.png" alt="" class="logo-img">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ln-i ln-i-m bl bl-main bl-r">
+            <div class="header-section">
+              <div class="info info-time icon icon-bg icon-large icon-clock">
+                <div class="info-content">
+                  Доставка работает<br>с 10:00 до 03:00
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ln-i ln-i-m bl bl-main bl-r">
+            <div class="header-section">
+              <div class="info info-payment icon icon-bg icon-large icon-card">
+                <div class="info-content">
+                  Оплата наличными<br>и картами
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ln-i ln-i-m">
+            <div class="header-section header-section-stocked-r">
+              <div class="shift-r">
+                <div class="info info-phone info-icon icon icon-bg icon-large icon-tube">
+                  <div class="info-content">
+                    <div class="phone">
+                      <div class="ln">
+                        <div class="ln-i">
+                          <div class="phone-code">+7(3452)</div>
+                        </div>
+                        <div class="ln-i">
+                          <div class="phone-number color-assertive">60-06-06</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-r">
+                      <a href="#" class="info-link">Заказать звонок</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-menu-line">
+      <div class="cont-site">
+        <div class="menu menu-main">
+          <div class="menu-list">
+            <div class="menu-item menu-item-first">
+              <a href="#" class="menu-link menu-link-first menu-icon icon icon-bg icon-medium icon-book">Меню</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Акции</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Отзывы</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">О нас</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Новости</a>
+            </div>
+            <div class="menu-item">
+              <a href="contacts.html" class="menu-link">Контакты</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="menu-link">Доставка</a>
+            </div>
+            <div class="menu-item menu-item-actions menu-icon icon icon-bg icon-medium icon-person">
+              <div>
+                <a href="#auth" class="link link-swan">Войти</a>
+              </div>
+              <a href="#reg" class="link link-swan">Регистрация</a>
+            </div>
+            <div class="menu-item menu-item-actions menu-item-last menu-icon icon icon-bg icon-medium icon-basket">
+              <a href="cart.html" class="link link-swan">Корзина</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <div class="cont-site">
+      <div class="heading heading-hawk">
+        <div class="heading-breadcrumbs">
+          <div class="breadcrumbs">
+            <ul class="breadcrumbs-list">
+              <li class="breadcrumbs-item">
+                <a class="link link-hawk" href="#">Главная</a>
+                <span class="breadcrumbs-delim">●</span>
+              </li>
+              <li class="breadcrumbs-item">Корзина</li>
+            </ul>
+          </div>
+        </div>
+        <div class="heading-title">
+          <h1 class="title title-swift">Корзина</h1>
+        </div>
+        <div class="heading-status">
+          <div class="info info-status">
+            <span class="info-label">Товары в корзине: </span>
+            <span class="info-value color-positive">Готовые к заказу</span>
+          </div>
+        </div>
+      </div>
+      <table class="tbl tbl-swift">
+        <thead>
+          <tr>
+            <td class="col-tbl-swift-1 tbl-cell-head"></td>
+            <td class="col-tbl-swift-2 tbl-cell-head">Навание:</td>
+            <td class="col-tbl-swift-3 tbl-cell-head">Вес:</td>
+            <td class="col-tbl-swift-4 tbl-cell-head">Цена:</td>
+            <td class="col-tbl-swift-5 tbl-cell-head">Количество:</td>
+            <td class="col-tbl-swift-6 tbl-cell-head">Сумма:</td>
+            <td class="col-tbl-swift-7 tbl-cell-head"></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="7" class="tbl-cell">
+              <div class="list-item list-item-cart shadow shadow-card decorator decorator-topline">
+                <div class="ln-equal">
+                  <div class="col-tbl-swift-1 ln-i bl bl-crow bl-r">
+                    <div class="list-item-section list-item-section-view">
+                      <div class="list-item-view">
+                        <img src="images/temp/pic-hit.jpg" alt="" class="list-item-img">
+                        <div class="list-item-label">
+                          <div class="label label-hit shadow shadow-text">Хит</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-2 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section">
+                      <h4 class="list-item-title title title-snipe">Ролл филадельфия</h4>
+                      <div class="list-item-desc">рис, нури, огурец, лосось, сыр филадельфия</div>
+                      <div class="list-item-features">
+                        <div class="feature feature-crow">
+                          <div class="inline feature-icon">
+                            <div class="icon icon-small icon-fire2"></div>
+                          </div>
+                          <div class="inline feature-value">210 кк</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-3 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item list-item-weight text-c">
+                        200 г
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-4 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item list-item-price text-c">
+                        450 руб
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-5 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item-counter">
+                        <div class="counter">
+                          <div class="inline">
+                            <div class="h-input h-input-xxx">
+                              <input type="text" class="counter-input input input-field" value="1">
+                            </div>
+                          </div>
+                          <div class="inline">
+                            <div class="counter-controls">
+                              <div class="counter-control plus"></div>
+                              <div class="counter-control minus"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-6 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section">
+                      <div class="price">
+                        <div class="ln">
+                          <div class="ln-i">
+                            <div class="price-value">450</div>
+                          </div>
+                          <div class="ln-i ln-i-b">
+                            <div class="price-currency">руб</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-7 ln-i ln-i-m">
+                    <div class="list-item-section">
+                      <a href="#" class="icon icon-close"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="7" class="tbl-cell">
+              <div class="list-item list-item-cart shadow shadow-card decorator decorator-topline">
+                <div class="ln-equal">
+                  <div class="col-tbl-swift-1 ln-i bl bl-crow bl-r">
+                    <div class="list-item-section list-item-section-view">
+                      <div class="list-item-view">
+                        <img src="images/temp/pic-hit.jpg" alt="" class="list-item-img">
+                        <div class="list-item-label">
+                          <div class="label label-hit shadow shadow-text">Хит</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-2 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section">
+                      <h4 class="list-item-title title title-snipe">Ролл филадельфия</h4>
+                      <div class="list-item-desc">рис, нури, огурец, лосось, сыр филадельфия</div>
+                      <div class="list-item-features">
+                        <div class="feature feature-crow">
+                          <div class="inline feature-icon">
+                            <div class="icon icon-small icon-fire2"></div>
+                          </div>
+                          <div class="inline feature-value">210 кк</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-3 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item list-item-weight text-c">
+                        200 г
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-4 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item list-item-price text-c">
+                        450 руб
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-5 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item-counter">
+                        <div class="counter">
+                          <div class="inline">
+                            <div class="h-input h-input-xxx">
+                              <input type="text" class="counter-input input input-field" value="1">
+                            </div>
+                          </div>
+                          <div class="inline">
+                            <div class="counter-controls">
+                              <div class="counter-control plus"></div>
+                              <div class="counter-control minus"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-6 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section">
+                      <div class="price">
+                        <div class="ln">
+                          <div class="ln-i">
+                            <div class="price-value">450</div>
+                          </div>
+                          <div class="ln-i ln-i-b">
+                            <div class="price-currency">руб</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-7 ln-i ln-i-m">
+                    <div class="list-item-section">
+                      <a href="#" class="icon icon-close"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="7" class="tbl-cell">
+              <div class="list-item list-item-cart shadow shadow-card decorator decorator-topline">
+                <div class="ln-equal">
+                  <div class="col-tbl-swift-1 ln-i bl bl-crow bl-r">
+                    <div class="list-item-section list-item-section-view">
+                      <div class="list-item-view">
+                        <img src="images/temp/pic-hit.jpg" alt="" class="list-item-img">
+                        <div class="list-item-label">
+                          <div class="label label-hit shadow shadow-text">Хит</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-2 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section">
+                      <h4 class="list-item-title title title-snipe">Ролл филадельфия</h4>
+                      <div class="list-item-desc">рис, нури, огурец, лосось, сыр филадельфия</div>
+                      <div class="list-item-features">
+                        <div class="feature feature-crow">
+                          <div class="inline feature-icon">
+                            <div class="icon icon-small icon-fire2"></div>
+                          </div>
+                          <div class="inline feature-value">210 кк</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-3 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item list-item-weight text-c">
+                        200 г
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-4 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item list-item-price text-c">
+                        450 руб
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-5 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item-counter">
+                        <div class="counter">
+                          <div class="inline">
+                            <div class="h-input h-input-xxx">
+                              <input type="text" class="counter-input input input-field" value="1">
+                            </div>
+                          </div>
+                          <div class="inline">
+                            <div class="counter-controls">
+                              <div class="counter-control plus"></div>
+                              <div class="counter-control minus"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-6 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section">
+                      <div class="price">
+                        <div class="ln">
+                          <div class="ln-i">
+                            <div class="price-value">450</div>
+                          </div>
+                          <div class="ln-i ln-i-b">
+                            <div class="price-currency">руб</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-7 ln-i ln-i-m">
+                    <div class="list-item-section">
+                      <a href="#" class="icon icon-close"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="7" class="tbl-cell">
+              <div class="list-item list-item-cart shadow shadow-card decorator decorator-topline">
+                <div class="ln-equal">
+                  <div class="col-tbl-swift-1 ln-i bl bl-crow bl-r">
+                    <div class="list-item-section list-item-section-view">
+                      <div class="list-item-view">
+                        <img src="images/temp/pic-hit.jpg" alt="" class="list-item-img">
+                        <div class="list-item-label">
+                          <div class="label label-hit shadow shadow-text">Хит</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-2 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section">
+                      <h4 class="list-item-title title title-snipe">Ролл филадельфия</h4>
+                      <div class="list-item-desc">рис, нури, огурец, лосось, сыр филадельфия</div>
+                      <div class="list-item-features">
+                        <div class="feature feature-crow">
+                          <div class="inline feature-icon">
+                            <div class="icon icon-small icon-fire2"></div>
+                          </div>
+                          <div class="inline feature-value">210 кк</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-3 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item list-item-weight text-c">
+                        200 г
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-4 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item list-item-price text-c">
+                        450 руб
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-5 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section list-item-line">
+                      <div class="list-item-counter">
+                        <div class="counter">
+                          <div class="inline">
+                            <div class="h-input h-input-xxx">
+                              <input type="text" class="counter-input input input-field" value="1">
+                            </div>
+                          </div>
+                          <div class="inline">
+                            <div class="counter-controls">
+                              <div class="counter-control plus"></div>
+                              <div class="counter-control minus"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-6 ln-i ln-i-m bl bl-crow bl-r">
+                    <div class="list-item-section">
+                      <div class="price">
+                        <div class="ln">
+                          <div class="ln-i">
+                            <div class="price-value">450</div>
+                          </div>
+                          <div class="ln-i ln-i-b">
+                            <div class="price-currency">руб</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-tbl-swift-7 ln-i ln-i-m">
+                    <div class="list-item-section">
+                      <a href="#" class="icon icon-close"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="section section-swift">
+        <div class="list shift-r text-r">
+          <div class="list-i">
+            <div class="info info-swift">
+              <div class="info-item">
+                <div class="ln shift-r">
+                  <div class="ln-i ln-i-m">
+                    <div class="info-label">Итого: </div>
+                  </div>
+                  <div class="ln-i">
+                    <div class="info-value">
+                      <div class="price">
+                        <div class="ln">
+                          <div class="ln-i">
+                            <div class="price-value">1800</div>
+                          </div>
+                          <div class="ln-i ln-i-b">
+                            <div class="price-currency">руб</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="info-text">Общий вес: <span class="info-value">1200 г</span></span>
+            </div>
+          </div>
+          <div class="list-i">
+            <a href="#" class="button button-swift button-3d button-rounded">Оформить заказ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="cont-hawk">
+      <div class="ln-fill">
+        <div class="ln-i bl bl-stork bl-r">
+          <div class="footer-section footer-section-stocked-l">
+            <div class="logo">
+              <a href="/" class="link-block"></a>
+              <div class="logo-view">
+                <img src="images/logo.png" alt="" class="logo-img">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ln-i bl bl-stork bl-r">
+          <div class="footer-section">
+            <div class="footer-menu">
+              <div class="menu menu-side">
+                <div class="grid-menu-side">
+                  <div class="ln">
+                    <div class="ln-i">
+                      <div class="grid-menu-side-i">
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Меню</a>
+                        </div>
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Акции</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-menu-side-i">
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Отзывы</a>
+                        </div>
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">О нас</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-menu-side-i">
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Новости</a>
+                        </div>
+                        <div class="menu-item">
+                          <a href="#" class="link link-swift">Контакты</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ln-i bl bl-stork bl-r">
+          <div class="footer-section">
+            <div class="info info-join">
+              <div class="info-label">Присоединяйтесь к нам:</div>
+              <div class="info-socials">
+                <div class="grid-thin">
+                  <div class="ln">
+                    <div class="ln-i">
+                      <div class="grid-thin-i">
+                        <a href="#" class="icon icon-socials icon-vk"></a>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-thin-i">
+                        <a href="#" class="icon icon-socials icon-fb"></a>
+                      </div>
+                    </div>
+                    <div class="ln-i">
+                      <div class="grid-thin-i">
+                        <a href="#" class="icon icon-socials icon-instagram"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ln-i">
+          <div class="footer-section footer-section-stocked-r">
+            <div class="info info-dev">
+              <div class="info-label">Создание сайта:</div>
+              <a href="http://vprioritete.ru/" target="_blank" class="link link-swift">ИК &laquo;Приоритет&raquo;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
