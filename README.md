@@ -1,5 +1,5 @@
+# isfomin.github.io
 
+![alt text](https://isfomin.github.io/smile916.png "916")
 
--> ![alt text](https://isfomin.github.io/smile916.png "916") <-
-
-->  © 2019 СайтСерёжиФомина, Inc. {style="text-align:center"} <-
+© 2019 СайтСерёжиФомина, Inc.
