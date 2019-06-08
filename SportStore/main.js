@@ -43,7 +43,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app',
-            template: "<store></store>"
+            template: "<router-outlet></router-outlet>"
         })
     ], AppComponent);
     return AppComponent;
@@ -68,6 +68,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _store_store_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store/store.module */ "./src/app/store/store.module.ts");
+/* harmony import */ var _store_store_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store/store.component */ "./src/app/store/store.component.ts");
+/* harmony import */ var _store_checkout_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./store/checkout.component */ "./src/app/store/checkout.component.ts");
+/* harmony import */ var _store_cartDetail_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./store/cartDetail.component */ "./src/app/store/cartDetail.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _storeFirst_guard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./storeFirst.guard */ "./src/app/storeFirst.guard.ts");
+
+
+
+
+
 
 
 
@@ -78,8 +88,24 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _store_store_module__WEBPACK_IMPORTED_MODULE_4__["StoreModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot([
+                    {
+                        path: "store", component: _store_store_component__WEBPACK_IMPORTED_MODULE_5__["StoreComponent"],
+                        canActivate: [_storeFirst_guard__WEBPACK_IMPORTED_MODULE_9__["StoreFirstGuard"]]
+                    },
+                    {
+                        path: "cart", component: _store_cartDetail_component__WEBPACK_IMPORTED_MODULE_7__["CartDetailComponent"],
+                        canActivate: [_storeFirst_guard__WEBPACK_IMPORTED_MODULE_9__["StoreFirstGuard"]]
+                    },
+                    {
+                        path: "checkout", component: _store_checkout_component__WEBPACK_IMPORTED_MODULE_6__["CheckoutComponent"],
+                        canActivate: [_storeFirst_guard__WEBPACK_IMPORTED_MODULE_9__["StoreFirstGuard"]]
+                    },
+                    { path: "**", redirectTo: "/store" }
+                ])],
+            providers: [_storeFirst_guard__WEBPACK_IMPORTED_MODULE_9__["StoreFirstGuard"]],
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _store_store_module__WEBPACK_IMPORTED_MODULE_4__["StoreModule"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
@@ -131,7 +157,7 @@ var Cart = /** @class */ (function () {
     };
     Cart.prototype.removeLine = function (id) {
         var index = this.lines.findIndex(function (line) { return line.product.id == id; });
-        this.lines.splice(index);
+        this.lines.splice(index, 1);
         this.recalculate();
     };
     Cart.prototype.clear = function () {
@@ -188,6 +214,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product_repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product.repository */ "./src/app/model/product.repository.ts");
 /* harmony import */ var _static_datasource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./static.datasource */ "./src/app/model/static.datasource.ts");
 /* harmony import */ var _cart_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cart.model */ "./src/app/model/cart.model.ts");
+/* harmony import */ var _order_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./order.model */ "./src/app/model/order.model.ts");
+/* harmony import */ var _order_repository__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./order.repository */ "./src/app/model/order.repository.ts");
+
+
 
 
 
@@ -198,10 +228,87 @@ var ModelModule = /** @class */ (function () {
     }
     ModelModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            providers: [_product_repository__WEBPACK_IMPORTED_MODULE_2__["ProductRepository"], _static_datasource__WEBPACK_IMPORTED_MODULE_3__["StaticDataSource"], _cart_model__WEBPACK_IMPORTED_MODULE_4__["Cart"]]
+            providers: [_product_repository__WEBPACK_IMPORTED_MODULE_2__["ProductRepository"], _static_datasource__WEBPACK_IMPORTED_MODULE_3__["StaticDataSource"], _cart_model__WEBPACK_IMPORTED_MODULE_4__["Cart"], _order_model__WEBPACK_IMPORTED_MODULE_5__["Order"], _order_repository__WEBPACK_IMPORTED_MODULE_6__["OrderRepository"]]
         })
     ], ModelModule);
     return ModelModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/order.model.ts":
+/*!**************************************!*\
+  !*** ./src/app/model/order.model.ts ***!
+  \**************************************/
+/*! exports provided: Order */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Order", function() { return Order; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _cart_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cart.model */ "./src/app/model/cart.model.ts");
+
+
+
+var Order = /** @class */ (function () {
+    function Order(cart) {
+        this.cart = cart;
+        this.shipped = false;
+    }
+    Order.prototype.clear = function () {
+        this.id = null;
+        this.name = this.address = this.city = null;
+        this.state = this.zip = this.country = null;
+        this.shipped = false;
+        this.cart.clear();
+    };
+    Order = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_cart_model__WEBPACK_IMPORTED_MODULE_2__["Cart"]])
+    ], Order);
+    return Order;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/order.repository.ts":
+/*!*******************************************!*\
+  !*** ./src/app/model/order.repository.ts ***!
+  \*******************************************/
+/*! exports provided: OrderRepository */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderRepository", function() { return OrderRepository; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _static_datasource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./static.datasource */ "./src/app/model/static.datasource.ts");
+
+
+
+var OrderRepository = /** @class */ (function () {
+    function OrderRepository(dataSource) {
+        this.dataSource = dataSource;
+        this.orders = [];
+    }
+    OrderRepository.prototype.getOrders = function () {
+        return this.orders;
+    };
+    OrderRepository.prototype.saveOrder = function (order) {
+        return this.dataSource.saveOrder(order);
+    };
+    OrderRepository = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_static_datasource__WEBPACK_IMPORTED_MODULE_2__["StaticDataSource"]])
+    ], OrderRepository);
+    return OrderRepository;
 }());
 
 
@@ -325,10 +432,58 @@ var StaticDataSource = /** @class */ (function () {
     StaticDataSource.prototype.getProducts = function () {
         return rxjs_Observable__WEBPACK_IMPORTED_MODULE_3__["Observable"].from([this.products]);
     };
+    StaticDataSource.prototype.saveOrder = function (order) {
+        console.log(JSON.stringify(order));
+        return rxjs_Observable__WEBPACK_IMPORTED_MODULE_3__["Observable"].from([order]);
+    };
     StaticDataSource = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
     ], StaticDataSource);
     return StaticDataSource;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/store/cartDetail.component.html":
+/*!*************************************************!*\
+  !*** ./src/app/store/cartDetail.component.html ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"navbar navbar-inverse bg-inverse\">\r\n  <a class=\"navbar-brand\">SPORTS STORE</a>\r\n</div>\r\n<div class=\"m-a-1\">\r\n  <h2 class=\"text-xs-center\">Your Cart</h2>\r\n  <table class=\"table table-bordered table-striped p-a-1\">\r\n    <thead>\r\n      <tr>\r\n        <th>Quantity</th>\r\n        <th>Product</th>\r\n        <th class=\"text-xs-right\">Price</th>\r\n        <th class=\"text-xs-right\">Subtotal</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngIf=\"cart.lines.length==0\">\r\n        <td colspan=\"4\" class=\"text-xs-center\">\r\n          Your cart is empty\r\n        </td>\r\n      </tr>\r\n      <tr *ngFor=\"let line of cart.lines\">\r\n        <td>\r\n          <input type=\"number\" class=\"form-control-sm\"\r\n            style=\"width:5em\"\r\n            [value]=\"line.quantity\"\r\n            (change)=\"cart.updateQuantity(line.product, $event.target.value)\" />\r\n        </td>\r\n        <td>\r\n          {{line.product.name}}\r\n        </td>\r\n        <td class=\"text-xs-right\">\r\n          {{line.product.price | currency:\"USD\":true:\"2.2-2\" }}\r\n        </td>\r\n        <td class=\"text-xs-right\">\r\n          {{line.lineTotal | currency:\"USD\":true:\"2.2-2\"}}\r\n        </td>\r\n        <td class=\"text-xs-center\">\r\n          <button class=\"btn btn-sm btn-danger\"\r\n            (click)=\"cart.removeLine(line.product.id)\">\r\n            Remove\r\n          </button>\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n    <tfoot>\r\n      <tr>\r\n        <td colspan=\"3\" class=\"text-xs-right\">Total:</td>\r\n        <td class=\"text-xs-right\">\r\n          {{cart.cartPrice | currency:\"USD\":true:\"2.2-2\"}}\r\n        </td>\r\n      </tr>\r\n    </tfoot>\r\n  </table>\r\n</div>\r\n<div class=\"text-xs-center\">\r\n  <button class=\"btn btn-primary\" routerLink=\"/store\">Continue Shopping</button>\r\n  &nbsp;\r\n  <button class=\"btn btn-secondary\" routerLink=\"/checkout\" [disabled]=\"cart.lines.length == 0\">\r\n    Checkout\r\n  </button>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/store/cartDetail.component.ts":
+/*!***********************************************!*\
+  !*** ./src/app/store/cartDetail.component.ts ***!
+  \***********************************************/
+/*! exports provided: CartDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartDetailComponent", function() { return CartDetailComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_cart_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/cart.model */ "./src/app/model/cart.model.ts");
+
+
+
+var CartDetailComponent = /** @class */ (function () {
+    function CartDetailComponent(cart) {
+        this.cart = cart;
+    }
+    CartDetailComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: __webpack_require__(/*! ./cartDetail.component.html */ "./src/app/store/cartDetail.component.html")
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_model_cart_model__WEBPACK_IMPORTED_MODULE_2__["Cart"]])
+    ], CartDetailComponent);
+    return CartDetailComponent;
 }());
 
 
@@ -342,7 +497,7 @@ var StaticDataSource = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"pull-xs-right\">\r\n  <small>\r\n    Your cart:\r\n    <span *ngIf=\"cart.itemCount > 0\">\r\n      {{cart.itemCount}} item(s)\r\n      {{cart.cartPrice | currency:\"USD\":true:\"2.2-2\"}}\r\n    </span>\r\n    <span *ngIf=\"cart.itemCount == 0\">\r\n      (empty)\r\n    </span>\r\n  </small>\r\n  <button class=\"btn btn-sm bg-inverse\" [disabled]=\"cart.itemCount == 0\">\r\n    <i class=\"fa fa-shopping-cart\"></i>\r\n  </button>\r\n</div>\r\n"
+module.exports = "<div class=\"pull-xs-right\">\r\n  <small>\r\n    Your cart:\r\n    <span *ngIf=\"cart.itemCount > 0\">\r\n      {{cart.itemCount}} item(s)\r\n      {{cart.cartPrice | currency:\"USD\":true:\"2.2-2\"}}\r\n    </span>\r\n    <span *ngIf=\"cart.itemCount == 0\">\r\n      (empty)\r\n    </span>\r\n  </small>\r\n  <button class=\"btn btn-sm bg-inverse\" [disabled]=\"cart.itemCount == 0\" routerLink=\"/cart\">\r\n    <i class=\"fa fa-shopping-cart\">to cart</i>\r\n  </button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -374,6 +529,78 @@ var CartSummaryComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_model_cart_model__WEBPACK_IMPORTED_MODULE_2__["Cart"]])
     ], CartSummaryComponent);
     return CartSummaryComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/store/checkout.component.css":
+/*!**********************************************!*\
+  !*** ./src/app/store/checkout.component.css ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "input.ng-dirty.ng-invalid { border: 2px solid #ff0000; }\r\ninput.ng-dirty.ng-valid { border: 2px solid #6bc502; }\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc3RvcmUvY2hlY2tvdXQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSw0QkFBNEIseUJBQXlCLEVBQUU7QUFDdkQsMEJBQTBCLHlCQUF5QixFQUFFIiwiZmlsZSI6InNyYy9hcHAvc3RvcmUvY2hlY2tvdXQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImlucHV0Lm5nLWRpcnR5Lm5nLWludmFsaWQgeyBib3JkZXI6IDJweCBzb2xpZCAjZmYwMDAwOyB9XHJcbmlucHV0Lm5nLWRpcnR5Lm5nLXZhbGlkIHsgYm9yZGVyOiAycHggc29saWQgIzZiYzUwMjsgfVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/store/checkout.component.html":
+/*!***********************************************!*\
+  !*** ./src/app/store/checkout.component.html ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"navbar navbar-inverse bg-inverse\">\r\n  <a class=\"navbar-brand\">SPORTS STORE</a>\r\n</div>\r\n<div *ngIf=\"orderSent\" class=\"m-a-1 text-xs-center\">\r\n  <h2>Thanks!</h2>\r\n  <p>Thanks for placing your order.</p>\r\n  <p>We'll ship your goods as soon as possible.</p>\r\n  <button class=\"btn btn-primary\" routerLink=\"/store\">Return to Store</button>\r\n</div>\r\n<form *ngIf=\"!orderSent\" #form=\"ngForm\" novalidate (ngSubmit)=\"submitOrder(form)\" class=\"m-a-1\">\r\n  <div class=\"form-group\">\r\n    <label>Name</label>\r\n    <input class=\"form-control\" #name=\"ngModel\" name=\"name\" [(ngModel)]=\"order.name\" required />\r\n    <span *ngIf=\"submitted && name.invalid\" class=\"text-danger\">Please enter your name</span>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Address</label>\r\n    <input class=\"form-control\" #address=\"ngModel\" name=\"address\" [(ngModel)]=\"order.address\" required />\r\n    <span *ngIf=\"submitted && address.invalid\" class=\"text-danger\">\r\n      Please enter your address\r\n    </span>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>City</label>\r\n    <input class=\"form-control\" #city=\"ngModel\" name=\"city\" [(ngModel)]=\"order.city\" required />\r\n    <span *ngIf=\"submitted && city.invalid\" class=\"text-danger\">\r\n      Please enter your city\r\n    </span>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>State</label>\r\n    <input class=\"form-control\" #state=\"ngModel\" name=\"state\" [(ngModel)]=\"order.state\" required />\r\n    <span *ngIf=\"submitted && state.invalid\" class=\"text-danger\">\r\n      Please enter your state\r\n    </span>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Zip/Postal Code</label>\r\n    <input class=\"form-control\" #zip=\"ngModel\" name=\"zip\" [(ngModel)]=\"order.zip\" required />\r\n    <span *ngIf=\"submitted && zip.invalid\" class=\"text-danger\">\r\n      Please enter your zip/postal code\r\n    </span>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Country</label>\r\n    <input class=\"form-control\" #country=\"ngModel\" name=\"country\" [(ngModel)]=\"order.country\" required />\r\n    <span *ngIf=\"submitted && country.invalid\" class=\"text-danger\">\r\n      Please enter your country\r\n    </span>\r\n  </div>\r\n  <div class=\"text-xs-center\">\r\n    <button class=\"btn btn-secondary\" routerLink=\"/cart\">Back</button>\r\n    <button class=\"btn btn-primary\" type=\"submit\">Complete Order</button>\r\n  </div>\r\n</form>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/store/checkout.component.ts":
+/*!*********************************************!*\
+  !*** ./src/app/store/checkout.component.ts ***!
+  \*********************************************/
+/*! exports provided: CheckoutComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckoutComponent", function() { return CheckoutComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_order_repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/order.repository */ "./src/app/model/order.repository.ts");
+/* harmony import */ var _model_order_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/order.model */ "./src/app/model/order.model.ts");
+
+
+
+
+var CheckoutComponent = /** @class */ (function () {
+    function CheckoutComponent(repository, order) {
+        this.repository = repository;
+        this.order = order;
+        this.orderSent = false;
+        this.submitted = false;
+    }
+    CheckoutComponent.prototype.submitOrder = function (form) {
+        var _this = this;
+        this.submitted = true;
+        if (form.valid) {
+            this.repository.saveOrder(this.order).subscribe(function (order) {
+                _this.order.clear();
+                _this.orderSent = true;
+                _this.submitted = false;
+            });
+        }
+    };
+    CheckoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: __webpack_require__(/*! ./checkout.component.html */ "./src/app/store/checkout.component.html"),
+            styles: [__webpack_require__(/*! ./checkout.component.css */ "./src/app/store/checkout.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_model_order_repository__WEBPACK_IMPORTED_MODULE_2__["OrderRepository"], _model_order_model__WEBPACK_IMPORTED_MODULE_3__["Order"]])
+    ], CheckoutComponent);
+    return CheckoutComponent;
 }());
 
 
@@ -453,14 +680,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _model_product_repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/product.repository */ "./src/app/model/product.repository.ts");
 /* harmony import */ var _model_cart_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/cart.model */ "./src/app/model/cart.model.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
 
 var StoreComponent = /** @class */ (function () {
-    function StoreComponent(repository, cart) {
+    function StoreComponent(repository, cart, router) {
         this.repository = repository;
         this.cart = cart;
+        this.router = router;
         this.selectedCategory = null;
         this.productsPerPage = 4;
         this.selectedPage = 1;
@@ -503,6 +733,7 @@ var StoreComponent = /** @class */ (function () {
     // }
     StoreComponent.prototype.addProductToCart = function (product) {
         this.cart.addLine(product);
+        this.router.navigateByUrl("/cart");
     };
     StoreComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -510,7 +741,7 @@ var StoreComponent = /** @class */ (function () {
             //moduleId: module.id,
             template: __webpack_require__(/*! ./store.component.html */ "./src/app/store/store.component.html")
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_model_product_repository__WEBPACK_IMPORTED_MODULE_2__["ProductRepository"], _model_cart_model__WEBPACK_IMPORTED_MODULE_3__["Cart"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_model_product_repository__WEBPACK_IMPORTED_MODULE_2__["ProductRepository"], _model_cart_model__WEBPACK_IMPORTED_MODULE_3__["Cart"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], StoreComponent);
     return StoreComponent;
 }());
@@ -537,6 +768,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store.component */ "./src/app/store/store.component.ts");
 /* harmony import */ var _counter_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./counter.directive */ "./src/app/store/counter.directive.ts");
 /* harmony import */ var _cartsummary_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./cartsummary.component */ "./src/app/store/cartsummary.component.ts");
+/* harmony import */ var _cartDetail_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./cartDetail.component */ "./src/app/store/cartDetail.component.ts");
+/* harmony import */ var _checkout_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./checkout.component */ "./src/app/store/checkout.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
 
 
 
@@ -550,12 +787,56 @@ var StoreModule = /** @class */ (function () {
     }
     StoreModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_model_model_module__WEBPACK_IMPORTED_MODULE_4__["ModelModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]],
-            declarations: [_store_component__WEBPACK_IMPORTED_MODULE_5__["StoreComponent"], _counter_directive__WEBPACK_IMPORTED_MODULE_6__["CounterDirective"], _cartsummary_component__WEBPACK_IMPORTED_MODULE_7__["CartSummaryComponent"]],
-            exports: [_store_component__WEBPACK_IMPORTED_MODULE_5__["StoreComponent"]]
+            imports: [_model_model_module__WEBPACK_IMPORTED_MODULE_4__["ModelModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"]],
+            declarations: [_store_component__WEBPACK_IMPORTED_MODULE_5__["StoreComponent"], _counter_directive__WEBPACK_IMPORTED_MODULE_6__["CounterDirective"], _cartsummary_component__WEBPACK_IMPORTED_MODULE_7__["CartSummaryComponent"], _cartDetail_component__WEBPACK_IMPORTED_MODULE_8__["CartDetailComponent"], _checkout_component__WEBPACK_IMPORTED_MODULE_9__["CheckoutComponent"]],
+            exports: [_store_component__WEBPACK_IMPORTED_MODULE_5__["StoreComponent"], _cartDetail_component__WEBPACK_IMPORTED_MODULE_8__["CartDetailComponent"], _checkout_component__WEBPACK_IMPORTED_MODULE_9__["CheckoutComponent"]]
         })
     ], StoreModule);
     return StoreModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/storeFirst.guard.ts":
+/*!*************************************!*\
+  !*** ./src/app/storeFirst.guard.ts ***!
+  \*************************************/
+/*! exports provided: StoreFirstGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreFirstGuard", function() { return StoreFirstGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _store_store_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store.component */ "./src/app/store/store.component.ts");
+
+
+
+
+var StoreFirstGuard = /** @class */ (function () {
+    function StoreFirstGuard(router) {
+        this.router = router;
+        this.firstNavigation = true;
+    }
+    StoreFirstGuard.prototype.canActivate = function (route, state) {
+        if (this.firstNavigation) {
+            this.firstNavigation = false;
+            if (route.component != _store_store_component__WEBPACK_IMPORTED_MODULE_3__["StoreComponent"]) {
+                this.router.navigateByUrl("/");
+                return false;
+            }
+        }
+        return true;
+    };
+    StoreFirstGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], StoreFirstGuard);
+    return StoreFirstGuard;
 }());
 
 
