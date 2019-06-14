@@ -216,7 +216,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cart_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cart.model */ "./src/app/model/cart.model.ts");
 /* harmony import */ var _order_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./order.model */ "./src/app/model/order.model.ts");
 /* harmony import */ var _order_repository__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./order.repository */ "./src/app/model/order.repository.ts");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _rest2_datasource__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./rest2.datasource */ "./src/app/model/rest2.datasource.ts");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+
 
 
 
@@ -230,9 +232,9 @@ var ModelModule = /** @class */ (function () {
     }
     ModelModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_http__WEBPACK_IMPORTED_MODULE_7__["HttpModule"]],
+            imports: [_angular_http__WEBPACK_IMPORTED_MODULE_8__["HttpModule"]],
             providers: [_product_repository__WEBPACK_IMPORTED_MODULE_2__["ProductRepository"], _cart_model__WEBPACK_IMPORTED_MODULE_4__["Cart"], _order_model__WEBPACK_IMPORTED_MODULE_5__["Order"], _order_repository__WEBPACK_IMPORTED_MODULE_6__["OrderRepository"],
-                { provide: _static_datasource__WEBPACK_IMPORTED_MODULE_3__["StaticDataSource"], useClass: _static_datasource__WEBPACK_IMPORTED_MODULE_3__["StaticDataSource"] }]
+                { provide: _static_datasource__WEBPACK_IMPORTED_MODULE_3__["StaticDataSource"], useClass: _rest2_datasource__WEBPACK_IMPORTED_MODULE_7__["Rest2DataSource"] }]
         })
     ], ModelModule);
     return ModelModule;
@@ -387,6 +389,53 @@ var ProductRepository = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_static_datasource__WEBPACK_IMPORTED_MODULE_2__["StaticDataSource"]])
     ], ProductRepository);
     return ProductRepository;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/rest2.datasource.ts":
+/*!*******************************************!*\
+  !*** ./src/app/model/rest2.datasource.ts ***!
+  \*******************************************/
+/*! exports provided: Rest2DataSource */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Rest2DataSource", function() { return Rest2DataSource; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+
+
+
+
+var Rest2DataSource = /** @class */ (function () {
+    function Rest2DataSource(http) {
+        this.http = http;
+        this.baseUrl = "https://my-json-server.typicode.com/isfomin/json-data/";
+    }
+    Rest2DataSource.prototype.getProducts = function () {
+        return this.sendRequest(_angular_http__WEBPACK_IMPORTED_MODULE_2__["RequestMethod"].Get, "products");
+    };
+    Rest2DataSource.prototype.saveOrder = function (order) {
+        return this.sendRequest(_angular_http__WEBPACK_IMPORTED_MODULE_2__["RequestMethod"].Post, "orders", order);
+    };
+    Rest2DataSource.prototype.sendRequest = function (verb, url, body) {
+        return this.http.request(new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Request"]({
+            method: verb,
+            url: this.baseUrl + url,
+            body: body
+        })).map(function (response) { return response.json(); });
+    };
+    Rest2DataSource = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"]])
+    ], Rest2DataSource);
+    return Rest2DataSource;
 }());
 
 
