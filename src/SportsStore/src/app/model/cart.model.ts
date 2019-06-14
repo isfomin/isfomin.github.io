@@ -27,7 +27,7 @@ export class Cart {
 
   removeLine(id:number) {
     let index = this.lines.findIndex(line => line.product.id == id);
-    this.lines.splice(index);
+    this.lines.splice(index, 1);
     this.recalculate();
   }
 
