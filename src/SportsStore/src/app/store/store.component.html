@@ -12,6 +12,9 @@
           (click)="changeCategory(cat)">
     {{cat}}
   </button>
+  <button class="btn btn-block btn-danger m-t-3" routerLink="/admin">
+    Admin
+  </button>
 </div>
 <div class="col-xs-9 p-a-1">
   <div *ngFor="let product of products" class="card card-outline-primary">
@@ -24,7 +27,7 @@
     <div class="card-text p-a-1">
       {{product.description}}
       <button class="btn btn-success btn-sm pull-xs-right" (click)="addProductToCart(product)">
-        Add To Cart        
+        Add To Cart
       </button>
     </div>
   </div>
