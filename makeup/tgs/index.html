@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ТГС</title>
+	<link rel="stylesheet" href="/makeup/tgs/css/base.css">
+	<link rel="stylesheet" href="/makeup/tgs/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/makeup/tgs/bower_components/jquery-ui/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/makeup/tgs/css/styles.css">
+	
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script src="/makeup/tgs/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/makeup/tgs/bower_components/jquery-mask/dist/jquery.mask.min.js"></script>
+	<script src="/makeup/tgs/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/makeup/tgs/bower_components/jquery-ui/jquery-ui.min.js"></script>
+	<script src="/makeup/tgs/js/functions.js"></script>
+	<script src="/makeup/tgs/js/custom.js"></script>
+</head>
+<body class="page">
+	<header class="header">
+		<div class="header-logo-line bg-dove">
+			<div class="cont-site">
+				<div class="ln-fill">
+					<div class="ln-i">
+						<div class="logo">
+							<div class="ln">
+								<div class="ln-i">
+									<div class="logo-view">
+										<img src="images/logo.png" alt="">
+									</div>
+								</div>
+								<div class="ln-i ln-i-m">
+									<div class="logo-text">
+										ООО «Тюменьгазстрой»
+									</div>
+									<div class="logo-subtext color-bittern">
+										Калейдоскоп новостроек
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ln-i">
+						<div class="header-address">
+							<div class="list-item list-item-main">
+								<div class="ln">
+									<div class="ln-i">
+										<div class="list-item-view">
+											<div class="icon icon-label"></div>
+										</div>
+									</div>
+									<div class="ln-i">
+										<div class="list-item-heading text text-dove">Офис продаж:</div>
+										<a href="#" class="list-item-link link link-dove">г.Тюмень, пр.Геологоразведчиков, 6в</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ln-i">
+						<div class="header-number shift-r">
+							<div class="list-item list-item-main">
+								<div class="ln">
+									<div class="ln-i">
+										<div class="list-item-view">
+											<div class="icon icon-tube"></div>
+										</div>
+									</div>
+									<div class="ln-i">
+										<div class="list-item-heading phone">
+											<span class="phone-code">+7 (3452)</span>
+											<span class="phone-number">20-93-33</span>
+										</div>
+										<a href="#" class="list-item-button button button-swift button-block button-rounded">Обратный звонок</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-menu-line">
+			<div class="cont-site">
+				<div class="ln-fill">
+					<div class="ln-i">
+						<div class="menu menu-main">
+						  <ul class="menu-list">
+								<li class="menu-item">
+								  <a href="#" class="menu-link link link-button">О застройщике</a>
+								</li>
+								<li class="menu-item">
+								  <a href="#" class="menu-link link link-button">Жилые комплексы</a>
+								</li>
+								<li class="menu-item active">
+								  <a href="#" class="menu-link link link-button">Квартиры</a>
+								</li>
+								<li class="menu-item">
+								  <a href="#" class="menu-link link link-button">Коммерческая недвижимость</a>
+								</li>
+								<li class="menu-item">
+								  <a href="#" class="menu-link link link-button">Как купить</a>
+								</li>
+								<li class="menu-item">
+								  <a href="#" class="menu-link link link-button">Акции</a>
+								</li>
+								<li class="menu-item">
+								  <a href="#" class="menu-link link link-button">Контакты</a>
+								</li>
+						  </ul>
+						</div>
+					</div>
+					<div class="ln-i text-r">
+						<a href="#" class="link link-swift" title="квартиры, которые Вам понравились">
+							<span class="icon icon-inline icon-small icon-favorite"></span>
+							Избранное
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-facade bg-facade">
+			<div class="cont-site">
+				<div class="area area-col2 grid">
+					<div class="area-i grid-cell">
+						<div class="card card-object shadow shadow-card shadow-hovered bg-main">
+							<a href="#" class="link-block"></a>
+							<div class="card-view">
+								<img src="images/temp/pic-object1.jpg" alt="" class="card-img">
+							</div>
+							<div class="card-title">
+								<div class="button button-quail colorbox colorbox-blue">ЖК Словцово</div>
+							</div>
+						</div>
+					</div>
+					<div class="area-i grid-cell">
+						<div class="card card-object shadow shadow-card shadow-hovered bg-main">
+							<a href="#" class="link-block"></a>
+							<div class="card-view">
+								<img src="images/temp/pic-object2.jpg" alt="" class="card-img">
+							</div>
+							<div class="card-title">
+								<div class="button button-quail colorbox colorbox-green">ЖК Квартет</div>
+							</div>
+						</div>
+					</div>
+					<div class="area-i grid-cell">
+						<div class="card card-object shadow shadow-card shadow-hovered bg-main">
+							<a href="#" class="link-block"></a>
+							<div class="card-view">
+								<img src="images/temp/pic-object3.jpg" alt="" class="card-img">
+							</div>
+							<div class="card-title">
+								<div class="button button-quail colorbox colorbox-orange">ЖК Серебрянные ключи 2</div>
+							</div>
+						</div>
+					</div>
+					<div class="area-i grid-cell">
+						<div class="card card-object shadow shadow-card shadow-hovered bg-main">
+							<a href="#" class="link-block"></a>
+							<div class="card-view">
+								<img src="images/temp/pic-object4.jpg" alt="" class="card-img">
+							</div>
+							<div class="card-title">
+								<div class="button button-quail colorbox colorbox-yellow">ЖК Соло</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<form action="#">
+					<div class="header-filter">
+						<div class="filter filter-search bl bl-main bl-around bg-main">
+							<div class="filter-section bl bl-main bl-b">
+								<h2 class="title title-hawk">
+									<span class="title-marks">Поиск квартиры</span>
+								</h2>
+							</div>
+							<div class="ln-fill bl bl-main bl-b">
+								<div class="ln-i">
+									<div class="filter-section filter-section-controls bl bl-main bl-r">
+										<div class="filter-line">
+											<div class="inline text text-crow">
+												Выберите объект:
+											</div>
+											<div class="inline checker">
+												<div class="checker-list">
+													<div class="grid-checker">
+														<div class="ln">
+															<div class="ln-i">
+																<div class="grid-checker-i">
+																	<div class="checker-item">
+																		<input id="obj1" name="object" type="radio" checked="checked">
+																		<label for="obj1" class="checker-control button button-quail button-thin">ЖК Словцово</label>
+																	</div>
+																</div>
+															</div>
+															<div class="ln-i">
+																<div class="grid-checker-i">
+																	<div class="checker-item">
+																		<input id="obj2" name="object" type="radio">
+																		<label for="obj2" class="checker-control button button-quail button-thin">ЖК Соло</label>
+																	</div>
+																</div>
+															</div>
+															<div class="ln-i">
+																<div class="grid-checker-i">
+																	<div class="checker-item">
+																		<input id="obj3" name="object" type="radio">
+																		<label for="obj3" class="checker-control button button-quail button-thin">ЖК Серебрянные ключи 2</label>
+																	</div>
+																</div>
+															</div>
+															<div class="ln-i">
+																<div class="grid-checker-i">
+																	<div class="checker-item">
+																		<input id="obj4" name="object" type="radio">
+																		<label for="obj4" class="checker-control button button-quail button-thin">ЖК Квартет</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="ln-i">
+									<div class="filter-section filter-section-controls">
+										<div class="filter-line">
+											<div class="inline text text-crow">
+												Количество комнат:
+											</div>
+											<div class="inline checker">
+												<div class="checker-list">
+													<div class="grid-thin">
+														<div class="ln">
+															<div class="ln-i">
+																<div class="grid-thin-i">
+																	<div class="checker-item">
+																		<input id="flat1" name="flat" type="radio" checked="checked">
+																		<label for="flat1" class="checker-control button button-quail button-thin">1К</label>
+																	</div>
+																</div>
+															</div>
+															<div class="ln-i">
+																<div class="grid-thin-i">
+																	<div class="checker-item">
+																		<input id="flat2" name="flat" type="radio">
+																		<label for="flat2" class="checker-control button button-quail button-thin">2К</label>
+																	</div>
+																</div>
+															</div>
+															<div class="ln-i">
+																<div class="grid-thin-i">
+																	<div class="checker-item">
+																		<input id="flat3" name="flat" type="radio">
+																		<label for="flat3" class="checker-control button button-quail button-thin">3К</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="ln-fill">
+								<div class="ln-i">
+									<div class="filter-section filter-section-controls bl bl-main bl-r">
+										<div class="filter-line">
+											<div class="inline text text-crow">
+												Этаж: с
+											</div>
+											<div class="inline h-input h-input-xx">
+												<input type="text" class="filter-input input input-number input-text" value="1">
+											</div>
+											<div class="inline text text-crow">
+												по
+											</div>
+											<div class="inline h-input h-input-xx">
+												<input type="text" class="filter-input input input-number input-text" value="16">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="ln-i">
+									<div class="filter-section filter-section-controls bl bl-main bl-r">
+										<div class="filter-line">
+											<div class="inline text text-crow">
+												Площадь: от
+											</div>
+											<div class="inline h-input h-input-xxx">
+												<input type="text" class="filter-input input input-number input-text" value="45">
+											</div>
+											<div class="inline text text-crow">
+												до
+											</div>
+											<div class="inline h-input h-input-xxx">
+												<input type="text" class="filter-input input input-number input-text" value="146">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="ln-i ln-i-fill">
+									<div class="filter-section filter-section-controls">
+										<div class="filter-line">
+											<div class="js-ui-slider-item">
+												<div class="inline text text-crow">
+													Стоимость: от
+												</div>
+												<div class="inline h-input h-input-millions">
+													<input type="text" class="js-mask-price js-ui-slider-min-value filter-input input input-number input-text" value="1 000 000">
+												</div>
+												<div class="inline text text-crow">
+													до
+												</div>
+												<div class="inline h-input h-input-millions">
+													<input type="text" class="js-mask-price js-ui-slider-max-value filter-input input input-number input-text" value="10 000 000">
+												</div>
+												<div class="inline">
+													<div class="h-slider h-slider-main">
+														<div id="slider-range-price" class="js-ui-slider slider slider-price" data-min-value="1000000" data-max-value="5000000"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="header-buttons text-c">
+						<button class="button button-swift button-rounded">Посмотреть квартиры</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</header>
+	<div class="content">
+		<div class="cont-site">
+			<div class="h-title h-title-main">
+				<h2 class="title title-hawk">
+					<span class="title-marks">Акции</span>
+				</h2>
+			</div>
+			<div class="grid">
+				<div class="ln-equal">
+					<div class="ln-i">
+						<div class="grid-i">
+							<div class="banner">
+								<a href="#" class="link-block"></a>
+								<div class="banner-view">
+									<img src="images/banner.jpg" alt="" class="banner-img">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ln-i">
+						<div class="grid-i">
+							<div class="banner">
+								<a href="#" class="link-block"></a>
+								<div class="banner-view">
+									<img src="images/banner.jpg" alt="" class="banner-img">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="h-title h-title-main">
+				<h2 class="title title-hawk">
+					<span class="title-marks">Почему выбирают нас</span>
+				</h2>
+			</div>
+			<div class="grid">
+				<div class="ln-equal">
+					<div class="ln-i">
+						<div class="grid-i">
+							<div class="sticker">
+								<div class="sticker-view">
+									<div class="shift-c">
+										<div class="icon icon-large icon-time"></div>
+									</div>
+								</div>
+								<div class="sticker-title text-c">
+									500 кв. метров жилья введено с 2003 года
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ln-i">
+						<div class="grid-i">
+							<div class="sticker">
+								<div class="sticker-view">
+									<div class="shift-c">
+										<div class="icon icon-large icon-wall"></div>
+									</div>
+								</div>
+								<div class="sticker-title text-c">
+									80% домов из кирпича
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ln-i">
+						<div class="grid-i">
+							<div class="sticker">
+								<div class="sticker-view">
+									<div class="shift-c">
+										<div class="icon icon-large icon-home"></div>
+									</div>
+								</div>
+								<div class="sticker-title text-c">
+									5 перспективных проектов
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ln-i">
+						<div class="grid-i">
+							<div class="sticker">
+								<div class="sticker-view">
+									<div class="shift-c">
+										<div class="icon icon-large icon-house"></div>
+									</div>
+								</div>
+								<div class="sticker-title text-c">
+									Удобные квартиры по доступной цене
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ln-i">
+						<div class="grid-i">
+							<div class="sticker">
+								<div class="sticker-view">
+									<div class="shift-c">
+										<div class="icon icon-large icon-home2"></div>
+									</div>
+								</div>
+								<div class="sticker-title text-c">
+									Ответственность застройщика
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cont-site">
+			<div class="h-title h-title-main">
+				<h2 class="title title-hawk">
+					<span class="title-marks">Объекты на карте</span>
+				</h2>
+			</div>
+		</div>
+		<div id="ymap-main" class="ymap ymap-main"></div>
+		<div class="cont-site">
+			<div class="snippet snippet-snipe">
+				<div class="h-title h-title-side">
+					<h2 class="title title-hawk">
+						<span class="title-marks">Квартиры в новостройках от застройщика «Тюменгазстрой»</span>
+					</h2>
+				</div>
+				<div class="snippet-text">
+					<p>Застройщиком ООО «Тюменгазстрой» построены десятки зданий и сооружений промышленного и социального назначения.</p>
+					<p>С 2003 по 2014 годы предприятие занимается строительством жилых домов. Новостройки «Тюменгазстрой» всегда пользуются большим спросом у жителей Тюмени и всей Тюменской области. За 10 лет  построено и введено в эксплуатацию более 50 домов, около 600 000 кв.м. жилой и коммерческой недвижимости.</p>
+					<p>Тюмень – город развивающийся, чтобы купить квартиры в новостройках, подходящие по цене, качеству, исполнению, конечно, необходимо исследовать рынок новостроек. Но надо отметить, что квартиры «Тюменгазстрой» доступны по стоимости, достойны по качеству, расположены в районах Тюмени с развитой инфраструктурой, поэтому обычно продаются ещё на стадии строительства по договорам долевого участия в строительстве.</p>
+					<p>Сегодня реализуется несколько новых проектов по строительству жилья в жилые комплексы «Словцово», «Квартет», «Соло» в микрорайонах, Восточный-2 и 3, «Серебряные ключи-2».-в пос. Войновка.</p>
+				</div>
+				<div class="snippet-actions">
+					<a href="#">Подробнее</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer bg-bittern">
+		<div class="cont-site">
+			<div class="ln-fill">
+				<div class="ln-i col-contacts bl bl-side bl-r">
+					<div class="footer-section footer-section-stocked-l">
+						<ul class="list list-contacts color-dove">
+							<li class="list-item list-item-side">
+								<div class="ln">
+									<div class="ln-i">
+										<div class="list-item-view">
+											<div class="icon icon-xsmall icon-label2"></div>
+										</div>
+									</div>
+									<div class="ln-i">
+										<a href="#">пр.Геологоразведчиков, 6в</a>
+									</div>
+								</div>
+							</li>
+							<li class="list-item list-item-side">
+								<div class="ln">
+									<div class="ln-i">
+										<div class="list-item-view">
+											<div class="icon icon-xsmall icon-tube2"></div>
+										</div>
+									</div>
+									<div class="ln-i">
+										<div class="list-item-row">
+											<div class="list-item-phone">+7 (3452) 20-93-33</div>
+										</div>
+										<div class="list-item-phone">+7 (3452) 58-59-36</div>
+									</div>
+								</div>
+							</li>
+							<li class="list-item list-item-side">
+								<div class="ln">
+									<div class="ln-i">
+										<div class="list-item-view">
+											<div class="icon icon-xsmall icon-letter"></div>
+										</div>
+									</div>
+									<div class="ln-i">
+										<a href="mailto:r-stroy@bk.ru" class="link link-simple">r-stroy@bk.ru</a>
+									</div>
+								</div>
+							</li>
+							<li class="list-item list-item-side">
+								<div class="ln">
+									<div class="ln-i">
+										<div class="list-item-view">
+											<div class="icon icon-xsmall icon-clock"></div>
+										</div>
+									</div>
+									<div class="ln-i">
+										<div class="list-item-row">
+											Пн-пт: <span class="text-b">08:30 - 20:00</span>
+										</div>
+										<div>
+											Сб: <span class="text-b">10:00-14:00</span>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ln-i ln-i-fill">
+					<div class="footer-section footer-section-stocked-r color-hawk">
+						<div class="footer-menu">
+							<div class="menu menu-side">
+								<div class="menu-list">
+									<div class="grid-thin">
+										<div class="ln-fill">
+											<div class="ln-i">
+												<div class="grid-thin-i">
+													<ul class="list list-side">
+														<li class="list-item list-item-title">
+															<div class="title title-simple">Покупателям</div>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Ипотека</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Рассрочка</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Акции</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Коммерческая<br>недвижимость</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="ln-i">
+												<div class="grid-thin-i">
+													<ul class="list list-side">
+														<li class="list-item list-item-title">
+															<div class="title title-simple">Квартиры</div>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Однокомнатные</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Двухкомнатные</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Трехкомнатные</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="ln-i">
+												<div class="grid-thin-i">
+													<ul class="list list-side">
+														<li class="list-item list-item-title">
+															<div class="title title-simple">О застройщике</div>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">О компании</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Новости</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Контакты</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="ln-i">
+												<div class="grid-thin-i">
+													<ul class="list list-side">
+														<li class="list-item list-item-title">
+															<div class="title title-simple">Жилые комплексы</div>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">ЖК Словцово</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">ЖК Серебрянные ключи 2</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">ЖК Квартет</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">ЖК Соло</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Перспективные проекты</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="ln-i">
+												<div class="grid-thin-i">
+													<ul class="list list-side">
+														<li class="list-item list-item-title">
+															<div class="title title-simple">Партнерам</div>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Агенствам недвижимости</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Строительные компании</a>
+														</li>
+														<li class="list-item">
+															<a href="#" class="link link-standart">Инвесторам</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer-dev">
+							<div class="dev">
+								Создание сайта: <a href="http://vprioritete.ru/" target="_blank" class="link link-standart">ИК Приоритет</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
