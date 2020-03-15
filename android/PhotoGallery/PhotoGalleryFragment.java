@@ -1,5 +1,9 @@
 package com.bignerdranch.android.photogallery;
 
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -18,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.SearchView;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +31,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PhotoGalleryFragment extends Fragment {
+public class PhotoGalleryFragment extends VisibleFragment {
     private static final String TAG_LOG = "PhotoGalleryFragment";
 
     private RecyclerView mPhotoRecyclerView;
@@ -109,13 +115,20 @@ public class PhotoGalleryFragment extends Fragment {
             }
         });
 
-        searchView.setOnClickListener(new View.OnClickListener() {
+        searchView.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String query = QueryPreference.getStoredQuery(getActivity());
                 searchView.setQuery(query, false);
             }
         });
+
+        MenuItem toggleItem = menu.findItem(R.id.menu_item_toggle_polling);
+        if (PollService.isServiceAlarmOn(getActivity())) {
+            toggleItem.setTitle(R.string.stop_polling);
+        } else {
+            toggleItem.setTitle(R.string.start_polling);
+        }
     }
 
     @Override
@@ -124,6 +137,12 @@ public class PhotoGalleryFragment extends Fragment {
             case R.id.menu_item_clear: {
                 QueryPreference.setStoredQuery(getActivity(), null);
                 updateItems();
+                return true;
+            }
+            case R.id.menu_item_toggle_polling: {
+                updateStateAlarm(true);
+                getActivity().invalidateOptionsMenu();
+                //testShowNotification();
                 return true;
             }
             default:
@@ -136,23 +155,48 @@ public class PhotoGalleryFragment extends Fragment {
         new FetchItemsTask(query).execute();
     }
 
+    private void updateStateAlarm(boolean toogle) {
+        boolean isServiceAlarmOn = PollService.isServiceAlarmOn(getActivity());
+
+        boolean shouldStartAlarm = toogle != isServiceAlarmOn;
+
+        PollService.setServiceAlarm(getActivity(), shouldStartAlarm);
+    }
+
     private void setupAdapter() {
         if (isAdded()) {
             mPhotoRecyclerView.setAdapter(new PhotoAdapter(mItems));
         }
     }
 
-    private class PhotoHolder extends RecyclerView.ViewHolder {
+    private class PhotoHolder extends RecyclerView.ViewHolder
+            implements View.OnClickListener {
         private ImageView mItemImageView;
+        private GalleryItem mGalleryItem;
 
         public PhotoHolder(View itemView) {
             super(itemView);
 
             mItemImageView = (ImageView) itemView.findViewById(R.id.item_image_view);
+            itemView.setOnClickListener(this);
         }
 
         public void bindDrawable(Drawable item) {
             mItemImageView.setImageDrawable(item);
+        }
+
+        public void bindGalleryItem(GalleryItem galleryItem) {
+            mGalleryItem = galleryItem;
+        }
+
+        @Override
+        public void onClick(View v) {
+            // Неявный интент, переход в браузер
+            //Intent i = new Intent(Intent.ACTION_VIEW, mGalleryItem.getPhotoPageUri());
+
+            // Отображение веб контента в приложении (Альтернативный вариант)
+            Intent i = PhotoPageActivity.newIntent(getActivity(), mGalleryItem.getPhotoPageUri());
+            startActivity(i);
         }
 
         // Пример загрузски картинки с использованием библиотеки Picasso
@@ -183,6 +227,7 @@ public class PhotoGalleryFragment extends Fragment {
             GalleryItem galleryItem = mGalleryItems.get(position);
             Drawable placeholder = getResources().getDrawable(R.drawable.bill_up_close);
             photoHolder.bindDrawable(placeholder);
+            photoHolder.bindGalleryItem(galleryItem);
             mThumbnailDownloader.queueThumbnail(photoHolder, galleryItem.getUrl());
         }
 
