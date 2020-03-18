@@ -594,7 +594,7 @@ var RestDataSource = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestConfig", function() { return RestConfig; });
 var RestConfig = {
-    url: "https://my-json-server.typicode.com/isfomin/json-data/",
+    url: "https://testdata.ilyk.ru/",
     method: "GET" // wtf?
 };
 
