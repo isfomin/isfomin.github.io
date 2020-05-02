@@ -1,0 +1,5 @@
+C:\Users\SF\documents\visual studio 2010\Projects\SEngine\SEngine\bin\Release\SEngine.exe
+C:\Users\SF\documents\visual studio 2010\Projects\SEngine\SEngine\bin\Release\SEngine.pdb
+C:\Users\SF\documents\visual studio 2010\Projects\SEngine\SEngine\obj\x86\Release\SEngine.exe
+C:\Users\SF\documents\visual studio 2010\Projects\SEngine\SEngine\obj\x86\Release\SEngine.pdb
+C:\Users\SF\documents\visual studio 2010\Projects\SEngine\SEngine\obj\x86\Release\SEngine.csprojResolveAssemblyReference.cache
